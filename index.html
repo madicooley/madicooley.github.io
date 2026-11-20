@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Madison Cooley builds machine learning models for physical systems. Explore her research, technical skills, and CV.">
+  <title>Madison Cooley | Scientific Machine Learning</title>
+  <link rel="stylesheet" href="./index.css">
+  <script src="skills.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./"><span class="mark" aria-hidden="true"></span>Madison Cooley</a>
+      <nav aria-label="Main navigation">
+        <a href="./" aria-current="page">Home</a>
+        <a href="./research/">Research</a>
+      </nav>
+      <div class="header-links"><a href="./cv/">CV</a>
+        <details class="email-disclosure">
+          <summary class="contact">Email</summary>
+          <p>mcooley220 [at] gmail [dot] com</p>
+        </details>
+      </div>
+    </div>
+  </header>
+  <main class="wrap" id="main" tabindex="-1">
+    <section class="intro" id="about-info">
+      <div class="intro-copy">
+        <p class="eyebrow">Scientific machine learning · Salt Lake City, UT</p>
+        <h1>Madison Cooley</h1>
+        <p class="lead">I build machine learning models for physical systems, like predicting how water moves through porous materials with different permeabilities.</p>
+        <p>I earned my Ph.D. in Computing at the University of Utah. I’m interested in industry Research Scientist, Applied Scientist, and R&amp;D roles.</p>
+        <div class="link-row intro-links">
+          <a class="button" href="cv/">View CV</a>
+          <a href="https://github.com/madicooley">GitHub</a>
+          <a href="https://www.linkedin.com/in/madison-cooley/">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=KTqFjaEAAAAJ&amp;hl=en">Google Scholar</a>
+        </div>
+      </div>
+      <img class="portrait" src="images/mcooley2.jpg" alt="Madison Cooley" width="1017" height="1442">
+    </section>
+
+    <section class="feature" aria-labelledby="feature-title">
+      <div class="feature-copy">
+        <p class="eyebrow">Featured research · TMLR 2026</p>
+        <h2 id="feature-title">Learning where to specialize</h2>
+        <p>I led the design, training, and evaluation of a neural operator that learns where to place local experts and blends their predictions smoothly.</p>
+        <div class="link-row">
+          <a class="button" href="research/#hirefpou">Explore HiRefPOU</a>
+          <a href="https://openreview.net/forum?id=ccEY1fZ5gA">Read the paper</a>
+        </div>
+      </div>
+      <figure class="feature-figure">
+        <a href="images/learned-partitions.jpg" aria-label="View the full learned partition figure">
+          <img src="images/partition-detail.webp" alt="Two maps of the same domain. One expert is strongest near the lower middle and the other on the right." width="688" height="332">
+        </a>
+        <div class="figure-labels" aria-hidden="true"><span>Refined expert 1</span><span>Refined expert 2</span></div>
+        <figcaption>Warm colors show where an expert has more influence. These two experts subdivide a single coarse region in a reaction–diffusion simulation. Detail from Figure 9.</figcaption>
+      </figure>
+    </section>
+
+    <section class="skills-section" id="skills" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Skills in practice</h2>
+      <div class="skill-strengths">
+        <article>
+          <h3>Scientific ML &amp; numerical methods</h3>
+          <p>I led the design and evaluation of HiRefPOU and built hybrid models for Darcy flow, Poisson, and Allen–Cahn problems.</p>
+          <a href="research/#hirefpou">Localized operator learning</a>
+        </article>
+        <article>
+          <h3>Python &amp; C++ research software</h3>
+          <p>I built Python and C++ pipelines for model training and evaluation, and wrote custom C++ differentiation rules for the fixed Legendre basis in PANNs.</p>
+          <div class="link-row"><a href="research/#panns">PANNs</a><a href="cv/#scientific-ml-experience">Research software experience</a></div>
+        </article>
+        <article>
+          <h3>GPU experiments &amp; model evaluation</h3>
+          <p>I ran baseline comparisons, hyperparameter studies, and ablations on GPU clusters with SLURM.</p>
+          <a href="cv/#experience">Research experience</a>
+        </article>
+      </div>
+      <div class="skill-index" hidden>
+        <h3>Explore by skill</h3>
+        <div class="tag-filter skill-filter" role="group" aria-label="Filter work by skill"></div>
+        <p class="skill-status" role="status"></p>
+        <ul class="skill-results"></ul>
+      </div>
+    </section>
+
+    <section class="home-gallery" aria-label="Explore my research">
+      <article class="gallery-card" id="publicationdatabase">
+        <div class="tile-visual plot"><img src="images/panns.webp" alt="Computed solution and error plots from the PANNs paper" loading="lazy"></div>
+        <div class="card-copy">
+          <h2><a href="research/">Research</a></h2>
+          <p>Neural operators, physics-informed models, and earlier work in graph algorithms.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer wrap">
+    <div><strong>Madison Cooley</strong><br>Salt Lake City, Utah</div>
+    <div class="link-row">
+      <a href="./cv/">CV</a>
+      <a href="https://github.com/madicooley">GitHub</a>
+      <a href="https://www.linkedin.com/in/madison-cooley/">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=KTqFjaEAAAAJ&amp;hl=en">Google Scholar</a>
+    </div>
+  </footer>
+</body>
+</html>

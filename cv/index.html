@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Madison Cooley’s research experience, industry internships, education, and technical skills.">
+  <title>CV | Madison Cooley</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../"><span class="mark" aria-hidden="true"></span>Madison Cooley</a>
+      <nav aria-label="Main navigation">
+        <a href="../">Home</a>
+        <a href="../research/">Research</a>
+      </nav>
+      <div class="header-links"><a href="./" aria-current="page">CV</a>
+        <details class="email-disclosure">
+          <summary class="contact">Email</summary>
+          <p>mcooley220 [at] gmail [dot] com</p>
+        </details>
+      </div>
+    </div>
+  </header>
+  <main class="wrap cv-page" id="main" tabindex="-1">
+    <header class="page-intro">
+      <h1>Curriculum Vitae</h1>
+      <p class="lead">Madison Cooley, Ph.D. · Scientific machine learning researcher</p>
+      <p class="cv-summary">I develop hybrid machine learning and numerical methods for physical systems. My work spans model design, Python and C++ implementation, and experiments on GPU clusters.</p>
+      <a class="button" href="../resources/Madison-Cooley-CV.pdf" download>Download CV (PDF)</a>
+    </header>
+    <nav class="cv-sections link-row" aria-label="CV sections">
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#publications">Publications</a>
+    </nav>
+
+    <section class="cv-section" id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title">Experience</h2>
+      <ol class="cv-timeline">
+        <li class="cv-role" id="scientific-ml-experience" data-evidence="Ran baseline comparisons, hyperparameter studies, and ablations on GPU clusters using SLURM.">
+          <p class="eyebrow"><time datetime="2022-05">May 2022</time> – <time datetime="2026-07">July 2026</time></p>
+          <div>
+            <h3>Graduate Research Assistant · Scientific ML</h3>
+            <p class="cv-org">University of Utah · Scientific Computing and Imaging Institute</p>
+            <ul>
+              <li>Led the design, training workflow, and evaluation of HiRefPOU, a neural operator that learns where to place local experts. It lowered prediction error against global DeepONet and fixed-partition baselines on heterogeneous Darcy and reaction–diffusion benchmarks.</li>
+              <li>Designed hybrid physics-informed networks and wrote custom C++ differentiation rules for a fixed Legendre basis. Evaluated accuracy and trainability on Darcy flow, Poisson, and Allen–Cahn problems.</li>
+              <li>Built Python and C++ training and evaluation pipelines, ran baseline comparisons and ablations on GPU clusters with SLURM, and generated Burgers and Kuramoto–Sivashinsky datasets with spectral solvers.</li>
+            </ul>
+            <details>
+              <summary>Semiconductor and materials collaborations</summary>
+              <ul>
+                <li>Ran Synopsys device simulations across material compositions, layer thicknesses, and geometries. Prepared simulation data for planned Bayesian optimization.</li>
+                <li>Worked with chemical engineers to model how pyrolysis conditions and experimental measurements relate to mesophase pitch formation and properties.</li>
+              </ul>
+            </details>
+            <ul class="work-tags" aria-label="Skills"><li data-skill>GPU computing</li><li data-skill>SLURM</li><li data-skill>Model evaluation</li></ul>
+            <div class="link-row"><a href="../research/#hirefpou">HiRefPOU</a><a href="../research/#panns">PANNs</a><a href="../research/#hyrespinns">HyResPINNs</a></div>
+          </div>
+        </li>
+        <li class="cv-role">
+          <p class="eyebrow"><time datetime="2020-01">January 2020</time> – <time datetime="2022-05">May 2022</time></p>
+          <div>
+            <h3>Graduate Research Assistant · Graph Algorithms</h3>
+            <p class="cv-org">University of Utah · School of Computing</p>
+            <ul>
+              <li>Developed graph algorithms for identifying overlapping groups in gene co-expression data and implemented C++ algorithms for structural rounding on noisy networks.</li>
+            </ul>
+            <div class="link-row"><a href="../research/#gene-modules">Gene co-expression paper</a><a href="../resources/ns20_talk.pdf">Structural rounding slides</a></div>
+          </div>
+        </li>
+        <li class="cv-role">
+          <p class="eyebrow">Spring and fall 2021</p>
+          <div>
+            <h3>Graduate Teaching Assistant</h3>
+            <p class="cv-org">University of Utah · School of Computing</p>
+            <p>Supported undergraduate Algorithms and Data Structures (CS 4150).</p>
+          </div>
+        </li>
+        <li class="cv-role">
+          <p class="eyebrow"><time datetime="2018-11">November 2018</time> – <time datetime="2019-09">September 2019</time></p>
+          <div>
+            <h3>Machine Learning Intern</h3>
+            <p class="cv-org">LanguageIO · Laramie, Wyoming</p>
+            <p>Cleaned and preprocessed noisy user data and implemented machine learning algorithms to predict human translation time.</p>
+          </div>
+        </li>
+        <li class="cv-role">
+          <p class="eyebrow"><time datetime="2018-03">March 2018</time> – <time datetime="2019-05">May 2019</time></p>
+          <div>
+            <h3>Research Computing Intern</h3>
+            <p class="cv-org">University of Wyoming · Advanced Research Computing Center</p>
+            <p>Helped researchers use HPC clusters, completed training in Linux systems administration and HPC, and created an online HPC training course.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="cv-section" id="education" aria-labelledby="education-title">
+      <h2 class="section-title" id="education-title">Education</h2>
+      <ol class="cv-timeline">
+        <li class="cv-role">
+          <p class="eyebrow"><time datetime="2026-07">July 2026</time></p>
+          <div>
+            <h3>Ph.D. in Computing</h3>
+            <p class="cv-org">University of Utah</p>
+            <p>Data Management &amp; Analysis track. Advised by Robert M. Kirby and Varun Shankar.</p>
+          </div>
+        </li>
+        <li class="cv-role">
+          <p class="eyebrow"><time datetime="2019-05">May 2019</time></p>
+          <div>
+            <h3>B.S. in Computer Science</h3>
+            <p class="cv-org">University of Wyoming</p>
+            <p>Minors in mathematics and statistics.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="cv-section" id="skills" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Technical skills</h2>
+      <dl class="cv-skills">
+        <div><dt>Scientific machine learning</dt><dd>Physics-informed learning, neural operators, surrogate modeling, localized mixture-of-experts</dd></div>
+        <div><dt>Software and computing</dt><dd>Python, C++, JAX, PyTorch, Linux, SLURM, GPU computing, Synopsys, Git</dd></div>
+        <div><dt>Algorithms and numerical methods</dt><dd>PDE approximation, spectral methods, numerical simulation, automatic differentiation, graph algorithms</dd></div>
+      </dl>
+    </section>
+
+    <section class="cv-section" id="publications" aria-labelledby="publications-title">
+      <h2 class="section-title" id="publications-title">Publications</h2>
+      <p>See the <a href="../research/#publicationdatabase">Research page</a> for papers, figures, and code.</p>
+    </section>
+  </main>
+  <footer class="site-footer wrap">
+    <div><strong>Madison Cooley</strong><br>Salt Lake City, Utah</div>
+    <div class="link-row">
+      <a href="./" aria-current="page">CV</a>
+      <a href="https://github.com/madicooley">GitHub</a>
+      <a href="https://www.linkedin.com/in/madison-cooley/">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=KTqFjaEAAAAJ&amp;hl=en">Google Scholar</a>
+    </div>
+  </footer>
+</body>
+</html>
