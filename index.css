@@ -254,3 +254,19 @@ html:not(.target-highlight-dismissed) :is(.paper:target, #presentations li:targe
     row-gap: .85rem;
   }
 }
+
+/* At-a-glance facts in the home intro */
+.quick-facts { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin: 1rem 0 .4rem; max-width: 65ch; }
+.quick-facts li { padding: .2rem .65rem; border-radius: 999px; background: var(--tint); border: 1px solid var(--line); color: var(--ink); font-size: .875rem; font-weight: 620; }
+.feature-copy p.why-it-matters { border-left: 3px solid var(--accent); padding-left: .85rem; font-size: .95rem; }
+.feature-copy p.why-it-matters strong { color: var(--accent); }
+
+/* Email menu */
+.email-disclosure .email-menu { position: absolute; z-index: 1; top: calc(100% + .35rem); right: 0; display: grid; gap: .45rem; padding: .65rem .75rem; background: var(--white); border: 1px solid var(--control-border); border-radius: 6px; font-size: .9rem; white-space: nowrap; }
+.email-disclosure .email-menu p { position: static; padding: 0; border: 0; background: none; }
+.email-actions { display: flex; gap: .5rem; align-items: center; }
+.email-actions a.button { color: white; }
+.email-actions button { font: inherit; font-size: .85rem; font-weight: 650; color: var(--link); background: var(--white); border: 1px solid var(--control-border); border-radius: 5px; padding: .4rem .7rem; cursor: pointer; }
+.email-actions button:hover { background: var(--tint); }
+.skill-count { display: inline-block; min-width: 1.4em; margin-left: .4rem; padding: 0 .35rem; border-radius: 999px; background: var(--tint); color: var(--link); font-size: .75rem; font-weight: 700; text-align: center; }
+.tag-filter button[aria-pressed="true"] .skill-count { background: #ffffff33; color: white; }

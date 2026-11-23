@@ -27,6 +27,10 @@ const categories = [
     'Reproducible training & evaluation pipelines', 'GPU computing', 'High-performance computing (HPC)',
     'Slurm', 'Linux', 'Experiment automation', 'Batch job scheduling',
   ]],
+  ['Communication & Collaboration', [
+    'Technical presentations', 'Scientific writing', 'Teaching & training',
+    'Cross-disciplinary collaboration', 'Computing education',
+  ]],
 ];
 
 const skillIndex = document.querySelector('.skill-index');
@@ -110,12 +114,18 @@ async function showSkillIndex() {
       if (!opening) return;
 
       categoryTitle.textContent = category;
-      for (const skill of skills) {
-        const matches = examples.get(skill) ?? [];
+      // Only list skills that link to at least one example.
+      for (const skill of skills.filter((name) => examples.has(name))) {
+        const matches = examples.get(skill);
         const skillButton = document.createElement('button');
         skillButton.type = 'button';
         skillButton.dataset.skill = skill;
         skillButton.textContent = skill;
+        const count = document.createElement('span');
+        count.className = 'skill-count';
+        count.textContent = matches.length;
+        count.setAttribute('aria-label', `${matches.length} ${matches.length === 1 ? 'example' : 'examples'}`);
+        skillButton.append(count);
         skillButton.setAttribute('aria-pressed', 'false');
         skillButton.setAttribute('aria-controls', 'skill-results');
         skillButton.addEventListener('click', () => {
@@ -133,6 +143,8 @@ async function showSkillIndex() {
     categoryButtons.append(button);
   }
   skillIndex.hidden = false;
+  // Start with the first category open so visitors see examples right away.
+  categoryButtons.querySelector('button')?.click();
 }
 
 showSkillIndex();

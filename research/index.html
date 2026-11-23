@@ -8,6 +8,14 @@
   <link rel="stylesheet" href="../index.css">
   <script src="../target-highlight.js?v=2" defer></script>
   <script src="../publication-tabs.js?v=3" defer></script>
+  <link rel="icon" type="image/png" href="../images/brand-mark.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Research · Madison Cooley">
+  <meta property="og:description" content="Published work in neural operators, physics-informed machine learning, and applied algorithms.">
+  <meta property="og:url" content="https://madicooley.github.io/research/">
+  <meta property="og:image" content="https://madicooley.github.io/images/mcooley2.jpg">
+  <meta name="twitter:card" content="summary">
+  <script src="../email.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -285,6 +293,7 @@
               <li data-skill data-contribution="Framing the sampling-bias problem" data-description="I proposed investigating whether demographic predictions trained on self-labeled Twitter data would generalize to randomly sampled users." data-evidence-target="self-labeled-data-skill-predictive-modeling">Predictive modeling</li>
               <li data-skill data-contribution="Framing the sampling-bias problem" data-description="I proposed investigating whether demographic predictions trained on self-labeled Twitter data would generalize to randomly sampled users." data-evidence-target="self-labeled-data-skill-predictive-modeling">Supervised learning</li>
               <li data-skill data-contribution="Implementing the original model in Python" data-description="I reimplemented FastText in Python and wrote the original bias-correction code using a modified kernel mean matching approach." data-evidence-target="self-labeled-data-skill-python">Python</li>
+              <li data-skill data-contribution="Drafting the original manuscript" data-description="I wrote the original manuscript, describing the research question, model, and approach to correcting sampling bias." data-evidence-target="self-labeled-data-skill-scientific-writing">Scientific writing</li>
             </ul>
           </section>
         </div>
@@ -325,7 +334,7 @@
           </section>
         </div>
       </article>
-      <article class="paper has-image" id="outreach">
+      <article class="paper has-image" id="outreach" data-work="View the outreach paper">
         <div class="publication-citation">
           <p class="eyebrow">ASEE · 2019</p>
           <h2><a href="https://doi.org/10.18260/1-2--32484" target="_blank" rel="noopener">Building Collaboration and Securing Interest in Computer Science Education through Outreach Opportunities</a></h2>
@@ -352,7 +361,7 @@
               <li id="outreach-skill-computing-education"><strong>Computing education.</strong> I co-authored the paper documenting the camp activities and student demonstrations.</li>
             </ul>
             <ul hidden>
-              <li data-skill>Computing education</li>
+              <li data-skill data-contribution="Documenting a computing outreach program" data-description="I co-authored the paper documenting summer camps where K–12 students and teachers practiced coding and computational thinking." data-evidence-target="outreach-skill-computing-education">Computing education</li>
             </ul>
           </section>
         </div>
@@ -360,7 +369,7 @@
     </section>
     <section class="paper-list selected-talks" id="selected-talks" aria-labelledby="talks-title">
       <h2 class="section-title" id="talks-title">Selected talks</h2>
-      <article class="paper has-image" id="dissertation-talk">
+      <article class="paper has-image" id="dissertation-talk" data-work="View the dissertation defense">
         <a class="paper-image" href="../images/dissertation-defense.webp" aria-label="View the dissertation defense photo">
           <img src="../images/dissertation-defense.webp" alt="Madison Cooley presenting her dissertation beside the projected title slide" width="1542" height="2048" loading="lazy">
         </a>
@@ -369,10 +378,14 @@
           <h3>Enriched Machine Learning Architectures for Scientific Computing</h3>
           <p class="paper-lead">How can we build models that capture rapid oscillations and local changes in physical systems?</p>
           <p>My defense brought together four approaches to that question. Fourier PINNs learn which frequencies matter, PANNs add a polynomial basis, HyResPINNs blend neural and radial basis function components, and HiRefPOU learns where local experts should specialize.</p>
+          <ul hidden>
+            <li data-skill data-contribution="Presenting my dissertation" data-description="I presented four model architectures for capturing oscillations and local changes in physical systems at my Ph.D. defense.">Technical presentations</li>
+            <li data-skill data-contribution="Writing my dissertation" data-description="I wrote a dissertation that brings together Fourier PINNs, PANNs, HyResPINNs, and HiRefPOU.">Scientific writing</li>
+          </ul>
           <div class="link-row"><a href="../cv/#dissertation-defense">View the full dissertation title and defense listing</a></div>
         </div>
       </article>
-      <article class="paper has-image" id="gene-module-talk">
+      <article class="paper has-image" id="gene-module-talk" data-work="View the gene module talks">
         <a class="paper-image" href="../images/gene-module-talk.webp" aria-label="View the gene–gene projection slide">
           <img src="../images/gene-module-talk.webp" alt="Talk slide showing how overlapping modules project onto a weighted network of genes" width="900" height="675" loading="lazy">
         </a>
@@ -381,6 +394,9 @@
           <h3>Gene Module Decomposition</h3>
           <p class="paper-lead">How can we recover overlapping groups of genes from the connections we observe between pairs?</p>
           <p>I co-authored a paper on recovering overlapping groups of genes from weighted connections. For SIAM ACDA, I recorded a longer presentation and gave a five-minute lightning talk. I later gave an invited seminar at Hasso-Plattner-Institut, where I used a step-by-step graph example to explain the decomposition.</p>
+          <ul hidden>
+            <li data-skill data-contribution="Explaining an algorithm to different audiences" data-description="I recorded a conference presentation, gave a five-minute lightning talk, and gave an invited seminar that used a step-by-step graph example.">Technical presentations</li>
+          </ul>
           <div class="link-row"><a href="#gene-modules">Related paper</a><a href="../resources/acda21_talk.pdf">Conference slides (PDF)</a><a href="../resources/acda21_lighttalk.pdf">Lightning talk slides (PDF)</a><a href="../resources/acda21_longtalk.pdf">Invited seminar slides (PDF)</a></div>
         </div>
       </article>
@@ -396,6 +412,7 @@
           <ul hidden>
             <li data-skill data-contribution="Graph algorithms in C++" data-description="I implemented C++ graph algorithms for approximate solutions on structured networks.">C++</li>
             <li data-skill data-contribution="Graph algorithms in C++" data-description="I implemented C++ graph algorithms for approximate solutions on structured networks.">Graph algorithms</li>
+            <li data-skill data-contribution="Presenting at a SIAM workshop" data-description="I gave a workshop talk at the SIAM Workshop on Network Science on finding approximate solutions for noisy networks.">Technical presentations</li>
           </ul>
           <div class="link-row"><a href="../resources/ns20_talk.pdf">Slides (PDF)</a><a href="https://ns20.cs.cornell.edu/abstracts/SIAMNS_2020_paper_43.pdf" target="_blank" rel="noopener">Abstract</a></div>
         </div>
@@ -404,7 +421,7 @@
     </section>
   </main>
   <footer class="site-footer wrap">
-    <div><strong>Madison Cooley</strong><br>Salt Lake City, Utah</div>
+    <div><strong>Madison Cooley</strong><br>Salt Lake City, Utah<br>© 2026 Madison Cooley</div>
     <div class="link-row">
       <a href="../cv/">CV</a>
       <a href="https://github.com/madicooley" target="_blank" rel="noopener">GitHub</a>

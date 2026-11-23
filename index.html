@@ -3,10 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Madison Cooley builds machine learning models for physical systems. Explore her research, technical skills, and CV.">
+  <meta name="description" content="Madison Cooley, Ph.D., builds physics-informed neural networks, neural operators, and surrogate models for science and engineering. Explore her research, skills, and CV.">
   <title>Madison Cooley</title>
   <link rel="stylesheet" href="./index.css">
-  <script src="skills.js?v=2" defer></script>
+  <script src="skills.js?v=3" defer></script>
+  <link rel="icon" type="image/png" href="./images/brand-mark.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Madison Cooley · Machine Learning Scientist">
+  <meta property="og:description" content="Madison Cooley, Ph.D., builds physics-informed neural networks, neural operators, and surrogate models for science and engineering. Explore her research, skills, and CV.">
+  <meta property="og:url" content="https://madicooley.github.io/">
+  <meta property="og:image" content="https://madicooley.github.io/images/mcooley2.jpg">
+  <meta name="twitter:card" content="summary">
+  <script src="./email.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -28,11 +36,15 @@
   <main class="wrap" id="main" tabindex="-1">
     <section class="intro" id="about-info">
       <div class="intro-copy">
-        <p class="eyebrow">Machine Learning Researcher · Salt Lake City, UT</p>
+        <p class="eyebrow">Machine Learning Scientist · Ph.D. · Salt Lake City, UT</p>
         <h1>Madison Cooley</h1>
-        <p class="lead">I build and evaluate machine learning models for science and engineering.
-          I’m especially interested in how to choose a model for a particular problem and how to tell whether it works. </p>
-        <p>During my Ph.D. in Computing at the University of Utah, I developed models for physical systems, built simulation datasets, and wrote software to train and test new methods.</p>
+        <p class="lead">I build and evaluate machine learning models for physical systems, including physics-informed neural networks, neural operators, and surrogate models for simulation-heavy engineering problems.</p>
+        <p>During my Ph.D. in Computing at the University of Utah, I designed new model architectures, generated simulation datasets, and ran benchmark, ablation, and hyperparameter studies on GPU clusters. I also worked with chemical engineers on machine learning for materials processing and simulated semiconductor devices in Synopsys. I care most about choosing the right model for a problem and testing whether it really works.</p>
+        <ul class="quick-facts" aria-label="At a glance">
+          <li>Ph.D. in Computing, University of Utah, 2026</li>
+          <li>5 papers in SIAM J. Sci. Comput., TMLR, and ICLR</li>
+          <li>Python · PyTorch · JAX · C++ · GPU clusters · Slurm · Linux</li>
+        </ul>
         <p><em>I’m based in Salt Lake City and looking for industry roles in machine learning research, applied science, and data science.</em></p>
         <div class="link-row intro-links">
           <a class="button" href="cv/">View CV</a>
@@ -49,6 +61,7 @@
         <p class="eyebrow">Featured research · TMLR 2026</p>
         <h2 id="feature-title">Learning where to specialize</h2>
         <p>How does a chemical concentration evolve when reactions occur on only one side of a domain? I led the development of a neural operator that learns where local experts should specialize and how to blend their predictions.</p>
+        <p class="why-it-matters"><strong>Why it matters.</strong> Many engineered systems, from layered materials to reacting flows, behave differently from one region to the next. In our heterogeneous Darcy flow and reaction–diffusion benchmarks, learning where to specialize reduced prediction error compared with a single global DeepONet.</p>
         <figure class="initial-field">
           <div class="field-map"><img src="images/hirefpou-initial.png" alt="Uniform initial concentration across the domain" width="208" height="208"></div>
           <figcaption><strong>Initial concentration.</strong> The field starts uniform. Reactions are active on the left and switch off on the right.</figcaption>
@@ -99,7 +112,7 @@
     <section class="skills-section" id="skills" aria-labelledby="skills-title">
       <h2 class="section-title" id="skills-title">Skills in practice</h2>
       <div class="skill-index" hidden>
-        <p class="skill-instruction">Choose a category to see the skills I’ve used and the projects where I used them.</p>
+        <p class="skill-instruction">Choose a category, then a skill, to see the projects where I used it. Numbers show how many examples each skill links to.</p>
         <div class="tag-filter skill-filter" id="skill-categories" role="group" aria-label="Skill categories"></div>
         <div class="skill-subcategories" id="skill-subcategories" hidden>
           <h4 id="skill-category-title"></h4>
@@ -112,7 +125,7 @@
 
   </main>
   <footer class="site-footer wrap">
-    <div><strong>Madison Cooley</strong><br>Salt Lake City, Utah</div>
+    <div><strong>Madison Cooley</strong><br>Salt Lake City, Utah<br>© 2026 Madison Cooley</div>
     <div class="link-row">
       <a href="./cv/">CV</a>
       <a href="https://github.com/madicooley" target="_blank" rel="noopener">GitHub</a>

@@ -7,6 +7,14 @@
   <title>CV | Madison Cooley</title>
   <link rel="stylesheet" href="../index.css">
   <script src="../target-highlight.js?v=2" defer></script>
+  <link rel="icon" type="image/png" href="../images/brand-mark.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CV · Madison Cooley">
+  <meta property="og:description" content="Explore Madison Cooley’s research experience, industry internships, education, and technical skills.">
+  <meta property="og:url" content="https://madicooley.github.io/cv/">
+  <meta property="og:image" content="https://madicooley.github.io/images/mcooley2.jpg">
+  <meta name="twitter:card" content="summary">
+  <script src="../email.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -47,8 +55,8 @@
         <li class="cv-role" id="scientific-ml-experience" data-work="View doctoral research experience">
           <p class="eyebrow"><time datetime="2022-05">May 2022</time> – <time datetime="2026-07">July 2026</time></p>
           <div>
-            <h3>Graduate Research Assistant · Scientific Machine Learning</h3>
-            <p class="cv-org">University of Utah · Scientific Computing and Imaging Institute</p>
+            <h3>Doctoral Researcher · Scientific Machine Learning</h3>
+            <p class="cv-org">University of Utah · Scientific Computing and Imaging Institute · Graduate Research Assistant</p>
             <h4 class="cv-role-subheading">Doctoral research</h4>
             <ul>
               <li>Led the design and evaluation of a neural operator that learns where local experts should specialize across a simulation domain. <a href="../research/#hirefpou">View HiRefPOU research</a>.</li>
@@ -85,6 +93,7 @@
                 <ul hidden>
                   <li data-skill data-contribution="Modeling mesophase pitch formation" data-description="I worked with chemical engineers to connect pyrolysis conditions and experimental measurements to pitch formation and material properties.">Predictive modeling</li>
                   <li data-skill data-contribution="Modeling mesophase pitch formation" data-description="I worked with chemical engineers to connect pyrolysis conditions and experimental measurements to pitch formation and material properties.">Analysis of experimental measurements</li>
+                  <li data-skill data-contribution="Working with chemical engineers" data-description="I worked with chemical engineers to connect pyrolysis conditions and experimental measurements to pitch formation and material properties.">Cross-disciplinary collaboration</li>
                 </ul>
               </li>
             </ul>
@@ -106,8 +115,8 @@
         <li class="cv-role">
           <p class="eyebrow"><time datetime="2020-01">January 2020</time> – <time datetime="2022-05">May 2022</time></p>
           <div>
-            <h3>Graduate Research Assistant · Graph Algorithms</h3>
-            <p class="cv-org">University of Utah · School of Computing</p>
+            <h3>Doctoral Researcher · Graph Algorithms</h3>
+            <p class="cv-org">University of Utah · School of Computing · Graduate Research Assistant</p>
             <ul>
               <li>Researched fixed-parameter tractable algorithms and structural graph algorithms for biological and network-science applications. <a href="../research/#gene-modules">View the research</a>.</li>
               <li>Implemented C++ graph algorithms for the Structural Rounding project to find approximate solutions on noisy networks. <a href="#structural-rounding-talk">View the presentation listing</a>.</li>
@@ -143,6 +152,7 @@
             <ul hidden>
               <li data-skill data-contribution="Supporting researchers on HPC clusters" data-description="I helped researchers use the University of Wyoming’s clusters and created an online HPC training course.">High-performance computing (HPC)</li>
               <li data-skill data-contribution="Helping researchers run jobs with Slurm" data-description="I helped researchers submit and run jobs on the University of Wyoming’s HPC clusters.">Slurm</li>
+              <li data-skill data-contribution="Creating an HPC training course" data-description="I created an online HPC training course and helped researchers run jobs on the University of Wyoming’s clusters.">Teaching &amp; training</li>
               <li data-skill data-contribution="Linux systems administration training" data-description="I completed Linux systems administration and HPC training while supporting cluster users.">Linux</li>
             </ul>
           </div>
@@ -198,16 +208,24 @@
 
     <section class="cv-section" id="teaching" aria-labelledby="teaching-title">
       <h2 class="section-title" id="teaching-title">Teaching</h2>
-      <p><strong>Graduate Teaching Assistant · Algorithms and Data Structures (CS 4150)</strong><br>
-        University of Utah · Spring and fall 2021. Held office hours, taught supplementary sessions, and prepared course materials.</p>
+      <div id="teaching-assistant" data-work="View teaching experience">
+        <p><strong>Graduate Teaching Assistant · Algorithms and Data Structures (CS 4150)</strong><br>
+          University of Utah · Spring and fall 2021. Held office hours, taught supplementary sessions, and prepared course materials.</p>
+        <ul hidden>
+          <li data-skill data-contribution="Teaching algorithms and data structures" data-description="I held office hours, taught supplementary sessions, and prepared course materials for CS 4150.">Teaching &amp; training</li>
+        </ul>
+      </div>
     </section>
 
     <section class="cv-section" id="skills" aria-labelledby="skills-title">
       <h2 class="section-title" id="skills-title">Technical skills</h2>
       <dl class="cv-skills">
-        <div><dt>Languages &amp; tools</dt><dd>Python, JAX, PyTorch, C++, LibTorch, Tensorflow</dd></div>
-        <div><dt>Modeling &amp; methods</dt><dd>PINNs, Surrogate modeling, neural operators, Gaussian processes, numerical simulation</dd></div>
-        <div><dt>Computing &amp; evaluation</dt><dd>GPU clusters, Slurm, benchmarking, ablation studies</dd></div>
+        <div><dt>Languages &amp; frameworks</dt><dd>Python, PyTorch, JAX, TensorFlow, C++, LibTorch, NumPy, SciPy</dd></div>
+        <div><dt>Machine learning</dt><dd>Physics-informed neural networks, neural operators, surrogate modeling, Gaussian processes, mixture-of-experts models, supervised learning, regression</dd></div>
+        <div><dt>Simulation &amp; numerical methods</dt><dd>PDE approximation, spectral solvers, synthetic data generation, semiconductor device simulation (Synopsys)</dd></div>
+        <div><dt>Evaluation</dt><dd>Benchmarking against baselines, ablation and hyperparameter studies, error analysis, model interpretability</dd></div>
+        <div><dt>Computing</dt><dd>GPU clusters, HPC, Slurm, Linux</dd></div>
+        <div><dt>Communication</dt><dd>Conference and invited talks, scientific writing, teaching, plain-language explanations of technical work</dd></div>
       </dl>
       <p><a href="../#skills">See skills in practice</a></p>
     </section>
@@ -286,7 +304,7 @@
     </section>
   </main>
   <footer class="site-footer wrap">
-    <div><strong>Madison Cooley</strong><br>Salt Lake City, Utah</div>
+    <div><strong>Madison Cooley</strong><br>Salt Lake City, Utah<br>© 2026 Madison Cooley</div>
     <div class="link-row">
       <a href="./" aria-current="page">CV</a>
       <a href="https://github.com/madicooley" target="_blank" rel="noopener">GitHub</a>
