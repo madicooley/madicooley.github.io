@@ -6,6 +6,8 @@
   <meta name="description" content="Published work in neural operators, physics-informed machine learning, and applied algorithms.">
   <title>Research | Madison Cooley</title>
   <link rel="stylesheet" href="../index.css">
+  <script src="../target-highlight.js?v=2" defer></script>
+  <script src="../publication-tabs.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -29,123 +31,385 @@
       <h1>Research</h1>
       <p class="lead">I build and test models for physical systems, drawing on numerical methods to improve what neural networks can learn.</p>
     </div>
+    <nav class="section-links link-row" aria-label="Research sections">
+      <a href="#publicationdatabase">Publications</a>
+      <a href="#selected-talks">Selected talks</a>
+    </nav>
+
     <section class="paper-list" id="publicationdatabase" aria-labelledby="papers-title">
       <h2 class="section-title" id="papers-title">Publications</h2>
-      <article class="paper has-image" id="hirefpou" data-evidence="Led the design and evaluation of a neural operator that learns where to place local experts.">
-        <a class="paper-image" href="../images/learned-partitions.jpg" aria-label="View figure for Localized Operator Learning with Adaptive Partition-of-Unity Mixture-of-Expert Networks"><img src="../images/learned-partitions.jpg" alt="Learned coarse and refined expert weights for reaction–diffusion" loading="lazy"></a>
-        <div>
+      <article class="paper has-image" id="hirefpou" data-work="Explore HiRefPOU">
+        <div class="publication-citation">
           <p class="eyebrow">TMLR · October 2026</p>
-          <h2><a href="https://openreview.net/forum?id=ccEY1fZ5gA">Localized Operator Learning with Adaptive Partition-of-Unity Mixture-of-Expert Networks</a></h2>
-          <p class="authors">Madison Cooley, Ramansh Sharma, Shandian Zhe, Robert M. Kirby, Varun Shankar</p>
-          <p class="paper-lead">When material properties change sharply across a domain, a single global model can miss important local details.</p>
-          <p>I led the architecture, training workflow, and experiments for HiRefPOU. Its nested partition-of-unity gates blend local DeepONet experts while preserving continuity. It reduced prediction error against global DeepONet and fixed-partition baselines on heterogeneous Darcy and reaction–diffusion benchmarks. The benefit of adding more levels varied by problem.</p>
-          <ul class="work-tags" aria-label="Skills"><li data-skill>Scientific ML</li><li data-skill>Neural operators</li><li data-skill>Mixture of experts</li><li data-skill>Model evaluation</li><li data-skill>Python</li></ul>
-          <div class="link-row"><a href="https://openreview.net/forum?id=ccEY1fZ5gA">Paper</a><a href="https://arxiv.org/html/2610.04708">Full text</a></div>
+          <h2><a href="https://openreview.net/forum?id=ccEY1fZ5gA" target="_blank" rel="noopener">Localized Operator Learning with Adaptive Partition-of-Unity Mixture-of-Expert Networks</a></h2>
+          <p class="authors"><strong>Madison Cooley</strong>, Ramansh Sharma, Shandian Zhe, Robert M. Kirby, Varun Shankar</p>
+        </div>
+        <div class="publication-media">
+          <a class="paper-image" href="../images/learned-partitions.jpg" aria-label="View figure for Localized Operator Learning with Adaptive Partition-of-Unity Mixture-of-Expert Networks"><img src="../images/learned-partitions.jpg" alt="Learned coarse and refined expert weights for reaction–diffusion" loading="lazy"></a>
+          <div class="link-row"><a href="https://openreview.net/forum?id=ccEY1fZ5gA" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/pdf/2610.04708v2" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/madicooley/AdaptiveOL" target="_blank" rel="noopener">Code</a></div>
+        </div>
+        <div class="publication-content">
+          <div class="publication-tabs" role="tablist" aria-label="Details for this publication" hidden></div>
+          <section class="publication-panel" id="hirefpou-overview">
+            <h3>Overview</h3>
+            <p class="paper-lead">When material properties change sharply across a domain, a single global model can miss important local details.</p>
+            <p>I led the architecture, training workflow, and experiments for HiRefPOU. Its nested partition-of-unity gates blend local DeepONet experts while preserving continuity. It reduced prediction error against global DeepONet and fixed-partition baselines on heterogeneous Darcy and reaction–diffusion benchmarks. The benefit of adding more levels varied by problem.</p>
+          </section>
+          <section class="publication-panel" id="hirefpou-plain-language">
+            <h3>Plain-language explanation</h3>
+            <p>Imagine trying to predict how water moves through soil made of sand and clay. The rules are the same everywhere, but water moves differently through each material. I built a model that learns which regions need their own specialists and blends their predictions where those regions overlap.</p>
+          </section>
+          <section class="publication-panel" id="hirefpou-skills">
+            <h3>Skills in practice</h3>
+            <ul class="publication-evidence">
+              <li id="hirefpou-skill-python"><strong>Python.</strong> I led the training and evaluation workflow for a neural operator with learned spatial partitions.</li>
+              <li id="hirefpou-skill-surrogate-modeling"><strong>Surrogate modeling.</strong> I led the design of a neural operator that predicts solutions for families of heterogeneous flow and reaction–diffusion problems.</li>
+              <li id="hirefpou-skill-mixture-of-experts-models"><strong>Mixture-of-experts models.</strong> I designed the architecture around learned partition-of-unity weights that blend local predictions continuously.</li>
+              <li id="hirefpou-skill-benchmarking-baseline-comparisons"><strong>Benchmarking &amp; baseline comparisons.</strong> I compared the model with global DeepONet and fixed-partition baselines on heterogeneous Darcy and reaction–diffusion benchmarks.</li>
+              <li id="hirefpou-skill-model-interpretability"><strong>Model interpretability.</strong> I examined the learned expert weights to see where the model specialized and how those regions related to heterogeneous structure.</li>
+            </ul>
+            <ul hidden>
+              <li data-skill data-contribution="Neural operator experiments in Python" data-description="I led the training and evaluation workflow for a neural operator with learned spatial partitions." data-evidence-target="hirefpou-skill-python">Python</li>
+              <li data-skill data-contribution="Local surrogates for heterogeneous PDEs" data-description="I led the design of a neural operator that predicts solutions for families of heterogeneous flow and reaction–diffusion problems." data-evidence-target="hirefpou-skill-surrogate-modeling">Surrogate modeling</li>
+              <li data-skill data-contribution="Local surrogates for heterogeneous PDEs" data-description="I led the design of a neural operator that predicts solutions for families of heterogeneous flow and reaction–diffusion problems." data-evidence-target="hirefpou-skill-surrogate-modeling">Neural operators</li>
+              <li data-skill data-contribution="Local surrogates for heterogeneous PDEs" data-description="I led the design of a neural operator that predicts solutions for families of heterogeneous flow and reaction–diffusion problems." data-evidence-target="hirefpou-skill-surrogate-modeling">PDE approximation</li>
+              <li data-skill data-contribution="A neural operator with nested local experts" data-description="I designed the architecture around learned partition-of-unity weights that blend local predictions continuously." data-evidence-target="hirefpou-skill-mixture-of-experts-models">Neural network architecture design</li>
+              <li data-skill data-contribution="A neural operator with nested local experts" data-description="I designed the architecture around learned partition-of-unity weights that blend local predictions continuously." data-evidence-target="hirefpou-skill-mixture-of-experts-models">Mixture-of-experts models</li>
+              <li data-skill data-contribution="A neural operator with nested local experts" data-description="I designed the architecture around learned partition-of-unity weights that blend local predictions continuously." data-evidence-target="hirefpou-skill-mixture-of-experts-models">Partition-of-unity methods</li>
+              <li data-skill data-contribution="Testing when localization helps" data-description="I compared the model with global DeepONet and fixed-partition baselines on heterogeneous Darcy and reaction–diffusion benchmarks." data-evidence-target="hirefpou-skill-benchmarking-baseline-comparisons">Computational experiment design</li>
+              <li data-skill data-contribution="Testing when localization helps" data-description="I compared the model with global DeepONet and fixed-partition baselines on heterogeneous Darcy and reaction–diffusion benchmarks." data-evidence-target="hirefpou-skill-benchmarking-baseline-comparisons">Benchmarking &amp; baseline comparisons</li>
+              <li data-skill data-contribution="Testing when localization helps" data-description="I compared the model with global DeepONet and fixed-partition baselines on heterogeneous Darcy and reaction–diffusion benchmarks." data-evidence-target="hirefpou-skill-benchmarking-baseline-comparisons">Model evaluation</li>
+              <li data-skill data-contribution="Reading the learned partitions" data-description="I examined the learned expert weights to see where the model specialized and how those regions related to heterogeneous structure." data-evidence-target="hirefpou-skill-model-interpretability">Model interpretability</li>
+            </ul>
+          </section>
         </div>
       </article>
-      <article class="paper has-image" id="panns" data-evidence="Implemented custom C++ automatic differentiation rules for the fixed Legendre basis.">
-        <a class="paper-image" href="../images/panns.webp" aria-label="View figure for Polynomial-Augmented Neural Networks (PANNs) with Weak Orthogonality Constraints for Enhanced Function and PDE Approximation"><img src="../images/panns.webp" alt="PANNs solution and error comparisons" loading="lazy"></a>
-        <div>
+      <article class="paper has-image" id="panns" data-work="Read the PANNs summary">
+        <div class="publication-citation">
           <p class="eyebrow">SIAM Journal on Scientific Computing · August 2026</p>
-          <h2><a href="https://doi.org/10.1137/25M1773556">Polynomial-Augmented Neural Networks (PANNs) with Weak Orthogonality Constraints for Enhanced Function and PDE Approximation</a></h2>
-          <p class="authors">Madison Cooley, Shandian Zhe, Robert M. Kirby, Varun Shankar</p>
-          <p class="paper-lead">Polynomials are good at representing smooth patterns, and neural networks can help with the parts that are harder to fit.</p>
-          <p>I helped design and evaluate a hybrid architecture with weak orthogonality constraints between its polynomial and neural components. I implemented custom C++ automatic differentiation rules for the fixed Legendre basis. In our benchmarks, PANNs improved on plain neural networks in regression and for numerical PDE solutions, and beat either component alone on tests with limited smoothness.</p>
-          <ul class="work-tags" aria-label="Skills"><li data-skill>Scientific ML</li><li data-skill>Numerical methods</li><li data-skill>C++</li><li data-skill>Automatic differentiation</li><li data-skill>Physics-informed learning</li><li data-skill>Model evaluation</li></ul>
-          <div class="link-row"><a href="https://doi.org/10.1137/25M1773556">Paper</a><a href="https://arxiv.org/abs/2406.02336">Preprint</a></div>
+          <h2><a href="https://doi.org/10.1137/25M1773556" target="_blank" rel="noopener">Polynomial-Augmented Neural Networks (PANNs) with Weak Orthogonality Constraints for Enhanced Function and PDE Approximation</a></h2>
+          <p class="authors"><strong>Madison Cooley</strong>, Shandian Zhe, Robert M. Kirby, Varun Shankar</p>
+        </div>
+        <div class="publication-media">
+          <a class="paper-image" href="../images/panns.webp" aria-label="View figure for Polynomial-Augmented Neural Networks (PANNs) with Weak Orthogonality Constraints for Enhanced Function and PDE Approximation"><img src="../images/panns.webp" alt="PANNs architecture combining a neural network with a polynomial expansion" width="632" height="373" loading="lazy"></a>
+          <div class="link-row"><a href="https://doi.org/10.1137/25M1773556" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2406.02336" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/madicooley/KernelPack" target="_blank" rel="noopener">Code</a></div>
+        </div>
+        <div class="publication-content">
+          <div class="publication-tabs" role="tablist" aria-label="Details for this publication" hidden></div>
+          <section class="publication-panel" id="panns-overview">
+            <h3>Overview</h3>
+            <p class="paper-lead">Polynomials are good at representing smooth patterns, and neural networks can help with the parts that are harder to fit.</p>
+            <p>I helped design and evaluate a hybrid architecture with weak orthogonality constraints between its polynomial and neural components. I implemented custom C++ automatic differentiation rules for the fixed Legendre basis. In our benchmarks, PANNs improved on plain neural networks in regression and for numerical PDE solutions, and beat either component alone on tests with limited smoothness.</p>
+          </section>
+          <section class="publication-panel" id="panns-plain-language">
+            <h3>Plain-language explanation</h3>
+            <p>Think of drawing a curve in two passes. A smooth line captures the broad shape, and a second pass fills in details that are harder to draw. Our model works in a similar way: a polynomial captures smooth patterns, and a neural network adds detail. Together they can fit some problems better than either component on its own.</p>
+          </section>
+          <section class="publication-panel" id="panns-skills">
+            <h3>Skills in practice</h3>
+            <ul class="publication-evidence">
+              <li id="panns-skill-cpp-and-automatic-differentiation"><strong>C++ and automatic differentiation.</strong> I implemented automatic differentiation rules for the fixed Legendre polynomial basis in a neural network for function and PDE approximation.</li>
+              <li id="panns-skill-polynomial-approximation"><strong>Polynomial approximation.</strong> I helped design a hybrid model with weak orthogonality constraints between the polynomial expansion and the neural network.</li>
+              <li id="panns-skill-regression"><strong>Regression.</strong> I helped evaluate the architecture on function regression and on numerical PDE solutions to see when the polynomial basis helped.</li>
+              <li id="panns-skill-model-evaluation"><strong>Model evaluation.</strong> I helped compare PANNs with plain neural networks on regression and PDE benchmarks, and with standalone polynomial models on functions with limited smoothness.</li>
+            </ul>
+            <ul hidden>
+              <li data-skill data-contribution="Custom differentiation rules in C++" data-description="I implemented automatic differentiation rules for the fixed Legendre polynomial basis in a neural network for function and PDE approximation." data-evidence-target="panns-skill-cpp-and-automatic-differentiation">C++</li>
+              <li data-skill data-contribution="Custom differentiation rules in C++" data-description="I implemented automatic differentiation rules for the fixed Legendre polynomial basis in a neural network for function and PDE approximation." data-evidence-target="panns-skill-cpp-and-automatic-differentiation">Automatic differentiation</li>
+              <li data-skill data-contribution="Combining neural and polynomial approximations" data-description="I helped design a hybrid model with weak orthogonality constraints between the polynomial expansion and the neural network." data-evidence-target="panns-skill-polynomial-approximation">Neural network architecture design</li>
+              <li data-skill data-contribution="Combining neural and polynomial approximations" data-description="I helped design a hybrid model with weak orthogonality constraints between the polynomial expansion and the neural network." data-evidence-target="panns-skill-polynomial-approximation">Hybrid neural–numerical methods</li>
+              <li data-skill data-contribution="Combining neural and polynomial approximations" data-description="I helped design a hybrid model with weak orthogonality constraints between the polynomial expansion and the neural network." data-evidence-target="panns-skill-polynomial-approximation">Polynomial approximation</li>
+              <li data-skill data-contribution="Testing polynomial augmentation on regression and PDEs" data-description="I helped evaluate the architecture on function regression and on numerical PDE solutions to see when the polynomial basis helped." data-evidence-target="panns-skill-regression">Regression</li>
+              <li data-skill data-contribution="Testing polynomial augmentation on regression and PDEs" data-description="I helped evaluate the architecture on function regression and on numerical PDE solutions to see when the polynomial basis helped." data-evidence-target="panns-skill-regression">Physics-informed neural networks</li>
+              <li data-skill data-contribution="Testing polynomial augmentation on regression and PDEs" data-description="I helped evaluate the architecture on function regression and on numerical PDE solutions to see when the polynomial basis helped." data-evidence-target="panns-skill-regression">PDE approximation</li>
+              <li data-skill data-contribution="Comparing accuracy against both components" data-description="I helped compare PANNs with plain neural networks on regression and PDE benchmarks, and with standalone polynomial models on functions with limited smoothness." data-evidence-target="panns-skill-model-evaluation">Model evaluation</li>
+              <li data-skill data-contribution="Comparing accuracy against both components" data-description="I helped compare PANNs with plain neural networks on regression and PDE benchmarks, and with standalone polynomial models on functions with limited smoothness." data-evidence-target="panns-skill-model-evaluation">Benchmarking &amp; baseline comparisons</li>
+              <li data-skill data-contribution="Comparing accuracy against both components" data-description="I helped compare PANNs with plain neural networks on regression and PDE benchmarks, and with standalone polynomial models on functions with limited smoothness." data-evidence-target="panns-skill-model-evaluation">Error analysis</li>
+            </ul>
+          </section>
         </div>
       </article>
-      <article class="paper has-image" id="hyrespinns" data-evidence="Designed and tested residual blocks that blend neural and radial basis function components.">
-        <a class="paper-image" href="../images/hyrespinns.webp" aria-label="View figure for HyResPINNs: A Hybrid Residual Physics-Informed Neural Network Architecture Designed to Balance Expressiveness and Trainability"><img src="../images/hyrespinns.webp" alt="Comparison of HyResPINN benchmark solutions" loading="lazy"></a>
-        <div>
+      <article class="paper has-image" id="hyrespinns" data-work="Explore HyResPINNs">
+        <div class="publication-citation">
           <p class="eyebrow">TMLR · December 2025</p>
-          <h2><a href="https://openreview.net/forum?id=et9WkjkqAw">HyResPINNs: A Hybrid Residual Physics-Informed Neural Network Architecture Designed to Balance Expressiveness and Trainability</a></h2>
-          <p class="authors">Madison Cooley, Mike Kirby, Shandian Zhe, Varun Shankar</p>
-          <p class="paper-lead">A model that can represent abrupt changes in a physical field can still be hard to train to find them.</p>
-          <p>I helped design and test residual blocks that learn how to blend neural and radial basis function components. Our Darcy flow and Allen–Cahn benchmarks show how the hybrid architecture can improve accuracy on problems with sharp or localized features.</p>
-          <ul class="work-tags" aria-label="Skills"><li data-skill>Scientific ML</li><li data-skill>Numerical methods</li><li data-skill>Physics-informed learning</li><li data-skill>Model evaluation</li></ul>
-          <div class="link-row"><a href="https://openreview.net/forum?id=et9WkjkqAw">Paper</a><a href="https://github.com/madicooley/HyResPINNs">Code</a></div>
+          <h2><a href="https://openreview.net/forum?id=et9WkjkqAw" target="_blank" rel="noopener">HyResPINNs: A Hybrid Residual Physics-Informed Neural Network Architecture Designed to Balance Expressiveness and Trainability</a></h2>
+          <p class="authors"><strong>Madison Cooley</strong>, Mike Kirby, Shandian Zhe, Varun Shankar</p>
+        </div>
+        <div class="publication-media">
+          <a class="paper-image" href="../images/hyrespinns.webp" aria-label="View figure for HyResPINNs: A Hybrid Residual Physics-Informed Neural Network Architecture Designed to Balance Expressiveness and Trainability"><img src="../images/hyrespinns.webp" alt="Comparison of HyResPINN benchmark solutions" loading="lazy"></a>
+          <div class="link-row"><a href="https://openreview.net/forum?id=et9WkjkqAw" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/pdf/2410.03573" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/madicooley/HyResPINNs" target="_blank" rel="noopener">Code</a></div>
+        </div>
+        <div class="publication-content">
+          <div class="publication-tabs" role="tablist" aria-label="Details for this publication" hidden></div>
+          <section class="publication-panel" id="hyrespinns-overview">
+            <h3>Overview</h3>
+            <p class="paper-lead">A model that can represent abrupt changes in a physical field can still be hard to train to find them.</p>
+            <p>I helped design and test residual blocks that learn how to blend neural and radial basis function components. Our Darcy flow and Allen–Cahn benchmarks show how the hybrid architecture can improve accuracy on problems with sharp or localized features.</p>
+          </section>
+          <section class="publication-panel" id="hyrespinns-plain-language">
+            <h3>Plain-language explanation</h3>
+            <p>A landscape can have broad hills and sharp ridges. A model needs to capture both, and it has to be able to learn where they are. We built a model that combines flexible neural networks with functions that can focus on local features, and tested how well it learned both kinds of patterns.</p>
+          </section>
+          <section class="publication-panel" id="hyrespinns-skills">
+            <h3>Skills in practice</h3>
+            <ul class="publication-evidence">
+              <li id="hyrespinns-skill-pytorch"><strong>Python and PyTorch.</strong> I wrote all of the project’s code in Python using PyTorch, including the hybrid residual architecture and the training and evaluation code.</li>
+              <li id="hyrespinns-skill-radial-basis-functions"><strong>Radial basis functions.</strong> I helped design and test blocks that combine neural and radial basis function components for physics-informed modeling.</li>
+              <li id="hyrespinns-skill-model-evaluation"><strong>Model evaluation.</strong> I helped test the hybrid residual architecture on Darcy flow and Allen–Cahn problems, examining prediction accuracy and training behavior.</li>
+            </ul>
+            <ul hidden>
+              <li data-skill data-contribution="Implementing HyResPINNs in PyTorch" data-description="I wrote all of the project’s code in Python using PyTorch, including the hybrid residual architecture and the training and evaluation code." data-evidence-target="hyrespinns-skill-pytorch">Python</li>
+              <li data-skill data-contribution="Implementing HyResPINNs in PyTorch" data-description="I wrote all of the project’s code in Python using PyTorch, including the hybrid residual architecture and the training and evaluation code." data-evidence-target="hyrespinns-skill-pytorch">PyTorch</li>
+              <li data-skill data-contribution="Residual blocks that learn how to blend bases" data-description="I helped design and test blocks that combine neural and radial basis function components for physics-informed modeling." data-evidence-target="hyrespinns-skill-radial-basis-functions">Neural network architecture design</li>
+              <li data-skill data-contribution="Residual blocks that learn how to blend bases" data-description="I helped design and test blocks that combine neural and radial basis function components for physics-informed modeling." data-evidence-target="hyrespinns-skill-radial-basis-functions">Physics-informed neural networks</li>
+              <li data-skill data-contribution="Residual blocks that learn how to blend bases" data-description="I helped design and test blocks that combine neural and radial basis function components for physics-informed modeling." data-evidence-target="hyrespinns-skill-radial-basis-functions">PDE approximation</li>
+              <li data-skill data-contribution="Residual blocks that learn how to blend bases" data-description="I helped design and test blocks that combine neural and radial basis function components for physics-informed modeling." data-evidence-target="hyrespinns-skill-radial-basis-functions">Hybrid neural–numerical methods</li>
+              <li data-skill data-contribution="Residual blocks that learn how to blend bases" data-description="I helped design and test blocks that combine neural and radial basis function components for physics-informed modeling." data-evidence-target="hyrespinns-skill-radial-basis-functions">Radial basis functions</li>
+              <li data-skill data-contribution="Comparing accuracy and trainability" data-description="I helped test the hybrid residual architecture on Darcy flow and Allen–Cahn problems, examining prediction accuracy and training behavior." data-evidence-target="hyrespinns-skill-model-evaluation">Model evaluation</li>
+              <li data-skill data-contribution="Comparing accuracy and trainability" data-description="I helped test the hybrid residual architecture on Darcy flow and Allen–Cahn problems, examining prediction accuracy and training behavior." data-evidence-target="hyrespinns-skill-model-evaluation">Benchmarking &amp; baseline comparisons</li>
+              <li data-skill data-contribution="Comparing accuracy and trainability" data-description="I helped test the hybrid residual architecture on Darcy flow and Allen–Cahn problems, examining prediction accuracy and training behavior." data-evidence-target="hyrespinns-skill-model-evaluation">Computational performance evaluation</li>
+            </ul>
+          </section>
         </div>
       </article>
-      <article class="paper has-image" id="fourier" data-evidence="Developed and tested an adaptive Fourier basis for recovering high-frequency PDE solutions.">
-        <a class="paper-image" href="../images/fourier.webp" aria-label="View figure for Fourier PINNs: From Strong Boundary Conditions to Adaptive Fourier Bases"><img src="../images/fourier.webp" alt="Frequency spectrum comparison for a Fourier PINN benchmark" loading="lazy"></a>
-        <div>
+      <article class="paper has-image" id="fourier" data-work="Explore Fourier PINNs">
+        <div class="publication-citation">
           <p class="eyebrow">TMLR · January 2025</p>
-          <h2><a href="https://openreview.net/forum?id=KqRnsEMYLx">Fourier PINNs: From Strong Boundary Conditions to Adaptive Fourier Bases</a></h2>
-          <p class="authors">Madison Cooley, Varun Shankar, Robert M. Kirby, Shandian Zhe</p>
-          <p class="paper-lead">Neural PDE solvers can smooth away rapid oscillations that matter to the solution.</p>
-          <p>I helped investigate how enforcing boundary conditions exactly affects frequency recovery, and developed and tested a physics-informed network with an adaptive Fourier basis. Across our experiments, selecting useful modes improved recovery of the high-frequency content.</p>
-          <ul class="work-tags" aria-label="Skills"><li data-skill>Scientific ML</li><li data-skill>Numerical methods</li><li data-skill>C++</li><li data-skill>PyTorch</li><li data-skill>Physics-informed learning</li></ul>
-          <div class="link-row"><a href="https://openreview.net/forum?id=KqRnsEMYLx">Paper</a><a href="https://arxiv.org/abs/2410.03496">Preprint</a><a href="https://github.com/VarShankar/KernelPack/tree/sciml">Code</a></div>
+          <h2><a href="https://openreview.net/forum?id=KqRnsEMYLx" target="_blank" rel="noopener">Fourier PINNs: From Strong Boundary Conditions to Adaptive Fourier Bases</a></h2>
+          <p class="authors"><strong>Madison Cooley</strong>, Varun Shankar, Robert M. Kirby, Shandian Zhe</p>
+        </div>
+        <div class="publication-media">
+          <a class="paper-image" href="../images/fourier.webp" aria-label="View figure for Fourier PINNs: From Strong Boundary Conditions to Adaptive Fourier Bases"><img src="../images/fourier.webp" alt="Fourier PINN benchmark comparing relative errors, training convergence, and predicted frequency spectra" width="639" height="403" loading="lazy"></a>
+          <div class="link-row"><a href="https://openreview.net/forum?id=KqRnsEMYLx" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2410.03496" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/madicooley/FourierPINNs" target="_blank" rel="noopener">Code</a></div>
+        </div>
+        <div class="publication-content">
+          <div class="publication-tabs" role="tablist" aria-label="Details for this publication" hidden></div>
+          <section class="publication-panel" id="fourier-overview">
+            <h3>Overview</h3>
+            <p class="paper-lead">Neural PDE solvers can smooth away rapid oscillations that matter to the solution.</p>
+            <p>I helped investigate how enforcing boundary conditions exactly affects frequency recovery, and developed and tested a physics-informed network with an adaptive Fourier basis. Across our experiments, selecting useful modes improved recovery of the high-frequency content.</p>
+          </section>
+          <section class="publication-panel" id="fourier-plain-language">
+            <h3>Plain-language explanation</h3>
+            <p>A recording can contain a slow bass line and a fast trill at the same time. A neural network may learn the slow part first and miss the fast one. We gave the model a set of possible wave patterns and a way to choose the ones it needed, so it could recover fine details in the solution.</p>
+          </section>
+          <section class="publication-panel" id="fourier-skills">
+            <h3>Skills in practice</h3>
+            <ul class="publication-evidence">
+              <li id="fourier-skill-pytorch"><strong>TensorFlow and LibTorch (C++).</strong> I built the original implementation in TensorFlow, then ported the Fourier PINN to C++ using LibTorch, the PyTorch C++ library.</li>
+              <li id="fourier-skill-fourier-approximation"><strong>Fourier approximation.</strong> I helped develop and test an adaptive Fourier basis that selects useful frequency modes during training.</li>
+              <li id="fourier-skill-error-analysis"><strong>Error analysis.</strong> I helped compare predicted spectra with the true solutions to see which high-frequency modes the models recovered.</li>
+              <li id="fourier-skill-model-interpretability"><strong>Model interpretability.</strong> I examined which Fourier modes remained active after training to see which frequencies the model used to reconstruct the solution.</li>
+            </ul>
+            <ul hidden>
+              <li data-skill data-contribution="Building the original TensorFlow implementation" data-description="I built the original implementation in TensorFlow, then ported the Fourier PINN to C++ using LibTorch, the PyTorch C++ library." data-evidence-target="fourier-skill-pytorch">TensorFlow</li>
+              <li data-skill data-contribution="Porting Fourier PINNs from TensorFlow to LibTorch" data-description="I built the original implementation in TensorFlow, then ported the Fourier PINN to C++ using LibTorch, the PyTorch C++ library." data-evidence-target="fourier-skill-pytorch">PyTorch</li>
+              <li data-skill data-contribution="Porting the model to C++ with LibTorch" data-description="I built the original implementation in TensorFlow, then ported the Fourier PINN to C++ using LibTorch, the PyTorch C++ library." data-evidence-target="fourier-skill-pytorch">C++</li>
+              <li data-skill data-contribution="Recovering high-frequency PDE solutions" data-description="I helped develop and test an adaptive Fourier basis that selects useful frequency modes during training." data-evidence-target="fourier-skill-fourier-approximation">Physics-informed neural networks</li>
+              <li data-skill data-contribution="Recovering high-frequency PDE solutions" data-description="I helped develop and test an adaptive Fourier basis that selects useful frequency modes during training." data-evidence-target="fourier-skill-fourier-approximation">PDE approximation</li>
+              <li data-skill data-contribution="Recovering high-frequency PDE solutions" data-description="I helped develop and test an adaptive Fourier basis that selects useful frequency modes during training." data-evidence-target="fourier-skill-fourier-approximation">Hybrid neural–numerical methods</li>
+              <li data-skill data-contribution="Recovering high-frequency PDE solutions" data-description="I helped develop and test an adaptive Fourier basis that selects useful frequency modes during training." data-evidence-target="fourier-skill-fourier-approximation">Fourier approximation</li>
+              <li data-skill data-contribution="Checking frequency recovery" data-description="I helped compare predicted spectra with the true solutions to see which high-frequency modes the models recovered." data-evidence-target="fourier-skill-error-analysis">Error analysis</li>
+              <li data-skill data-contribution="Checking frequency recovery" data-description="I helped compare predicted spectra with the true solutions to see which high-frequency modes the models recovered." data-evidence-target="fourier-skill-error-analysis">Model evaluation</li>
+              <li data-skill data-contribution="Interpreting the active Fourier modes" data-description="I examined which Fourier modes remained active after training to see which frequencies the model used to reconstruct the solution." data-evidence-target="fourier-skill-model-interpretability">Model interpretability</li>
+            </ul>
+          </section>
         </div>
       </article>
-      <article class="paper" id="gaussian-processes" data-evidence="Co-led a study of Gaussian process solvers that learn the dominant frequencies of a PDE solution.">
-
-        <div>
+      <article class="paper has-image" id="gaussian-processes" data-work="Explore the Gaussian process study">
+        <div class="publication-citation">
           <p class="eyebrow">ICLR · 2024</p>
-          <h2><a href="https://openreview.net/forum?id=q4AEBLHuA6">Solving High Frequency and Multi-Scale PDEs with Gaussian Processes</a></h2>
-          <p class="authors">Shikai Fang, Madison Cooley, Da Long, Shibo Li, Robert M. Kirby, Shandian Zhe</p>
-          <p class="paper-lead">Solving a physical model gets harder when its output varies at several scales at once.</p>
-          <p>I co-led this study of Gaussian process solvers that learn the dominant frequencies of a PDE solution. We paired spectral mixture kernels with Kronecker structure on grids and showed improved accuracy over neural baselines in high-frequency tests.</p>
-          <ul class="work-tags" aria-label="Skills"><li data-skill>Scientific ML</li><li data-skill>Gaussian processes</li><li data-skill>Numerical methods</li></ul>
-          <div class="link-row"><a href="https://openreview.net/forum?id=q4AEBLHuA6">Paper</a><a href="https://github.com/xuangu-fang/Gaussian-Process-Solver-for-High-Freq-PDE">Code</a></div>
+          <h2><a href="https://openreview.net/forum?id=q4AEBLHuA6" target="_blank" rel="noopener">Solving High Frequency and Multi-Scale PDEs with Gaussian Processes</a></h2>
+          <p class="authors">Shikai Fang<sup>*</sup>, <strong>Madison Cooley</strong><sup>*</sup>, Da Long<sup>*</sup>, Shibo Li, Robert M. Kirby, Shandian Zhe</p>
+        </div>
+        <div class="publication-media">
+          <a class="paper-image" href="../images/gaussian-processes.webp" aria-label="View figure for Solving High Frequency and Multi-Scale PDEs with Gaussian Processes"><img src="../images/gaussian-processes.webp" alt="Predictions from five methods compared with reference solutions for two 1D Poisson problems" width="592" height="287" loading="lazy"></a>
+          <div class="link-row"><a href="https://openreview.net/forum?id=q4AEBLHuA6" target="_blank" rel="noopener">Paper</a><a href="https://github.com/xuangu-fang/Gaussian-Process-Solver-for-High-Freq-PDE" target="_blank" rel="noopener">Code</a></div>
+        </div>
+        <div class="publication-content">
+          <div class="publication-tabs" role="tablist" aria-label="Details for this publication" hidden></div>
+          <section class="publication-panel" id="gaussian-processes-overview">
+            <h3>Overview</h3>
+            <p class="paper-lead">Solving a physical model gets harder when its output varies at several scales at once.</p>
+            <p>I co-led this study of Gaussian process solvers that learn the dominant frequencies of a PDE solution. We paired spectral mixture kernels with Kronecker structure on grids and showed improved accuracy over neural baselines in high-frequency tests.</p>
+          </section>
+          <section class="publication-panel" id="gaussian-processes-plain-language">
+            <h3>Plain-language explanation</h3>
+            <p>Some physics problems produce solutions with both broad trends and tiny ripples. We built a solver that can learn which kinds of ripples are present. In our tests, it followed rapid oscillations that several comparison methods missed.</p>
+          </section>
+          <section class="publication-panel" id="gaussian-processes-skills">
+            <h3>Skills in practice</h3>
+            <ul class="publication-evidence">
+              <li id="gaussian-processes-skill-gaussian-processes"><strong>Gaussian processes.</strong> I co-led a study that used spectral mixture kernels to learn the dominant frequencies in PDE solutions.</li>
+              <li id="gaussian-processes-skill-benchmarking-baseline-comparisons"><strong>Benchmarking &amp; baseline comparisons.</strong> I co-led the study that evaluated the Gaussian process solver against neural baselines on high-frequency PDE tests.</li>
+            </ul>
+            <ul hidden>
+              <li data-skill data-contribution="Gaussian process solvers for multiscale PDEs" data-description="I co-led a study that used spectral mixture kernels to learn the dominant frequencies in PDE solutions." data-evidence-target="gaussian-processes-skill-gaussian-processes">Gaussian processes</li>
+              <li data-skill data-contribution="Gaussian process solvers for multiscale PDEs" data-description="I co-led a study that used spectral mixture kernels to learn the dominant frequencies in PDE solutions." data-evidence-target="gaussian-processes-skill-gaussian-processes">PDE approximation</li>
+              <li data-skill data-contribution="Comparing Gaussian process and neural solvers" data-description="I co-led the study that evaluated the Gaussian process solver against neural baselines on high-frequency PDE tests." data-evidence-target="gaussian-processes-skill-benchmarking-baseline-comparisons">Benchmarking &amp; baseline comparisons</li>
+              <li data-skill data-contribution="Comparing Gaussian process and neural solvers" data-description="I co-led the study that evaluated the Gaussian process solver against neural baselines on high-frequency PDE tests." data-evidence-target="gaussian-processes-skill-benchmarking-baseline-comparisons">Model evaluation</li>
+            </ul>
+          </section>
+          <p class="paper-note"><small>* Equal contribution.</small></p>
         </div>
       </article>
-      <article class="paper" id="self-labeled-data" data-evidence="Co-authored a study of sampling bias in training data for demographic prediction.">
-
-        <div>
+      <article class="paper has-image" id="self-labeled-data" data-work="Explore the sampling-bias study">
+        <div class="publication-citation">
           <p class="eyebrow">IEEE Big Data · 2022</p>
-          <h2><a href="https://doi.org/10.1109/BigData55660.2022.10020166">Debiased Learning of Self-Labeled Twitter Data for User Demographic Prediction</a></h2>
-          <p class="authors">Zhen Wang, Madison Cooley, Yang Zhang, Chao Lan, Ji Zhang</p>
-          <p class="paper-lead">People who volunteer demographic information online can differ from the population a model will encounter.</p>
-          <p>I co-authored this study. We found that FastText trained on self-labeled data generalized poorly on randomly sampled test users and proposed a kernel mean matching approach to address the sampling bias.</p>
-          <ul class="work-tags" aria-label="Skills"><li data-skill>Data science</li><li data-skill>Model evaluation</li></ul>
-          <div class="link-row"><a href="https://doi.org/10.1109/BigData55660.2022.10020166">Paper</a></div>
+          <h2><a href="https://doi.org/10.1109/BigData55660.2022.10020166" target="_blank" rel="noopener">Debiased Learning of Self-Labeled Twitter Data for User Demographic Prediction</a></h2>
+          <p class="authors">Zhen Wang, <strong>Madison Cooley</strong>, Yang Zhang, Chao Lan, Ji Zhang</p>
+        </div>
+        <div class="publication-media">
+          <a class="paper-image" href="../images/self-labeled-data.webp" aria-label="View figure for Debiased Learning of Self-Labeled Twitter Data for User Demographic Prediction"><img src="../images/self-labeled-data.webp" alt="Two example tweets illustrating how people self-report demographic information" width="725" height="403" loading="lazy"></a>
+          <div class="link-row"><a href="https://doi.org/10.1109/BigData55660.2022.10020166" target="_blank" rel="noopener">Paper</a></div>
+        </div>
+        <div class="publication-content">
+          <div class="publication-tabs" role="tablist" aria-label="Details for this publication" hidden></div>
+          <section class="publication-panel" id="self-labeled-data-overview">
+            <h3>Overview</h3>
+            <p class="paper-lead">People who volunteer demographic information online can differ from the population a model will encounter.</p>
+            <p>As an undergraduate, I conceived the study, wrote the original Python implementation, and drafted the initial manuscript. I investigated whether FastText trained on self-labeled Twitter data would generalize to randomly sampled users and developed a bias correction based on kernel mean matching. The initial manuscript remained unpublished. After I moved on to graduate school, another student built on that work and wrote the final version published at IEEE Big Data.</p>
+          </section>
+          <section class="publication-panel" id="self-labeled-data-plain-language">
+            <h3>Plain-language explanation</h3>
+            <p>Suppose you train a model on people who volunteered a detail about themselves online. Those volunteers may differ from the people the model later encounters. My original question was whether a model would work as well on a random sample of users. I developed a way to adjust for the difference during training.</p>
+          </section>
+          <section class="publication-panel" id="self-labeled-data-skills">
+            <h3>Skills in practice</h3>
+            <ul class="publication-evidence">
+              <li id="self-labeled-data-skill-predictive-modeling"><strong>Predictive modeling.</strong> I proposed investigating whether demographic predictions trained on self-labeled Twitter data would generalize to randomly sampled users.</li>
+              <li id="self-labeled-data-skill-python"><strong>Python.</strong> I reimplemented FastText in Python and wrote the original bias-correction code using a modified kernel mean matching approach.</li>
+              <li id="self-labeled-data-skill-scientific-writing"><strong>Scientific writing.</strong> I wrote the original manuscript, describing the research question, model, and approach to correcting sampling bias.</li>
+            </ul>
+            <ul hidden>
+              <li data-skill data-contribution="Framing the sampling-bias problem" data-description="I proposed investigating whether demographic predictions trained on self-labeled Twitter data would generalize to randomly sampled users." data-evidence-target="self-labeled-data-skill-predictive-modeling">Predictive modeling</li>
+              <li data-skill data-contribution="Framing the sampling-bias problem" data-description="I proposed investigating whether demographic predictions trained on self-labeled Twitter data would generalize to randomly sampled users." data-evidence-target="self-labeled-data-skill-predictive-modeling">Supervised learning</li>
+              <li data-skill data-contribution="Implementing the original model in Python" data-description="I reimplemented FastText in Python and wrote the original bias-correction code using a modified kernel mean matching approach." data-evidence-target="self-labeled-data-skill-python">Python</li>
+            </ul>
+          </section>
         </div>
       </article>
-      <article class="paper has-image" id="gene-modules" data-evidence="Led work on modeling overlapping gene groups as weighted cliques and testing decomposition algorithms.">
-        <a class="paper-image" href="../images/cliques.webp" aria-label="View figure for Parameterized algorithms for identifying gene co-expression modules via weighted clique decomposition"><img src="../images/cliques.webp" alt="Diagram of overlapping groups from the ACDA presentation" loading="lazy"></a>
-        <div>
+      <article class="paper has-image" id="gene-modules" data-work="Explore gene co-expression research">
+        <div class="publication-citation">
           <p class="eyebrow">SIAM ACDA · 2021</p>
-          <h2><a href="https://doi.org/10.1137/1.9781611976830.11">Parameterized algorithms for identifying gene co-expression modules via weighted clique decomposition</a></h2>
-          <p class="authors">Madison Cooley, Casey S. Greene, Davis Issac, Milton Pividori, Blair D. Sullivan</p>
-          <p class="paper-lead">Genes can act together in overlapping groups, which makes it difficult to recover those groups from pairwise measurements.</p>
-          <p>I led work on modeling those groups as weighted cliques. We proved fixed-parameter tractability in the noise-free setting with respect to the number of groups and tested two algorithms on biologically inspired synthetic data.</p>
-          <ul class="work-tags" aria-label="Skills"><li data-skill>Graph algorithms</li><li data-skill>Python</li></ul>
-          <div class="link-row"><a href="https://doi.org/10.1137/1.9781611976830.11">Paper</a><a href="https://arxiv.org/abs/2106.00657">Preprint</a><a href="../resources/acda21_talk.pdf">Slides</a><a href="../resources/acda21_lighttalk.pdf">Lightning talk</a></div>
+          <h2><a href="https://doi.org/10.1137/1.9781611976830.11" target="_blank" rel="noopener">Parameterized algorithms for identifying gene co-expression modules via weighted clique decomposition</a></h2>
+          <p class="authors"><strong>Madison Cooley</strong>, Casey S. Greene, Davis Issac, Milton Pividori, Blair D. Sullivan</p>
+        </div>
+        <div class="publication-media">
+          <a class="paper-image" href="../images/cliques.webp" aria-label="View figure for Parameterized algorithms for identifying gene co-expression modules via weighted clique decomposition"><img src="../images/cliques.webp" alt="Illustration using the band KISS to explain how overlapping groups and their weights model gene co-expression" width="909" height="596" loading="lazy"></a>
+          <div class="link-row"><a href="https://doi.org/10.1137/1.9781611976830.11" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2106.00657" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/TheoryInPractice/cricca" target="_blank" rel="noopener">Code</a><a href="#gene-module-talk">View the presentations</a></div>
+        </div>
+        <div class="publication-content">
+          <div class="publication-tabs" role="tablist" aria-label="Details for this publication" hidden></div>
+          <section class="publication-panel" id="gene-modules-overview">
+            <h3>Overview</h3>
+            <p class="paper-lead">Genes can act together in overlapping groups, which makes it difficult to recover those groups from pairwise measurements.</p>
+            <p>Our team modeled those groups as weighted cliques. I developed the full fixed-parameter tractable integer-partitioning algorithm for the noise-free problem and wrote all of the project’s Python code, including the visualization scripts for the paper’s figures. We tested two algorithms on biologically inspired synthetic data.</p>
+          </section>
+          <section class="publication-panel" id="gene-modules-plain-language">
+            <h3>Plain-language explanation</h3>
+            <p>Genes can take part in several jobs at once, like people who belong to more than one club. We usually observe how strongly pairs of genes vary together. We studied how to work backward from those pairwise connections to identify the overlapping groups that could have produced them.</p>
+          </section>
+          <section class="publication-panel" id="gene-modules-skills">
+            <h3>Skills in practice</h3>
+            <ul class="publication-evidence">
+              <li id="gene-modules-skill-graph-algorithms"><strong>Graph algorithms.</strong> I developed the full integer-partitioning algorithm for decomposing weighted graphs into overlapping cliques. The algorithm is fixed-parameter tractable in the number of cliques in the noise-free setting.</li>
+              <li id="gene-modules-skill-python"><strong>Python.</strong> I wrote all of the project’s Python code, including the implementation of the decomposition algorithms and the experiments on synthetic data.</li>
+              <li id="gene-modules-skill-data-visualization"><strong>Data visualization.</strong> I wrote the Python visualization scripts that produced the figures in the paper.</li>
+            </ul>
+            <ul hidden>
+              <li data-skill data-contribution="Fixed-parameter tractable algorithm design" data-description="I developed the full integer-partitioning algorithm for decomposing weighted graphs into overlapping cliques. The algorithm is fixed-parameter tractable in the number of cliques in the noise-free setting." data-evidence-target="gene-modules-skill-graph-algorithms">Graph algorithms</li>
+              <li data-skill data-contribution="Research implementation in Python" data-description="I wrote all of the project’s Python code, including the implementation of the decomposition algorithms and the experiments on synthetic data." data-evidence-target="gene-modules-skill-python">Python</li>
+              <li data-skill data-contribution="Figure generation in Python" data-description="I wrote the Python visualization scripts that produced the figures in the paper." data-evidence-target="gene-modules-skill-data-visualization">Data visualization</li>
+            </ul>
+          </section>
         </div>
       </article>
-      <article class="paper" id="outreach" data-evidence="Co-authored a study of computing outreach camps with hands-on coding labs.">
-
-        <div>
+      <article class="paper has-image" id="outreach">
+        <div class="publication-citation">
           <p class="eyebrow">ASEE · 2019</p>
-          <h2><a href="https://doi.org/10.18260/1-2--32484">Building Collaboration and Securing Interest in Computer Science Education through Outreach Opportunities</a></h2>
-          <p class="authors">Shaya Wolf, Fiona Moss, Rasana Manandhar, Madison Cooley, Rafer Cooley, Andrea Burrows, Mike Borowczak</p>
-          <p class="paper-lead">Hands-on summer camps give students and teachers a way to try computing in schools with limited course offerings.</p>
-          <p>I co-authored our account of the outreach program. Participants practiced coding and computational thinking through hands-on labs, and students finished by demonstrating their projects to friends and family.</p>
-          <ul class="work-tags" aria-label="Skills"><li data-skill>Computing education</li></ul>
-          <div class="link-row"><a href="https://doi.org/10.18260/1-2--32484">Paper</a></div>
+          <h2><a href="https://doi.org/10.18260/1-2--32484" target="_blank" rel="noopener">Building Collaboration and Securing Interest in Computer Science Education through Outreach Opportunities</a></h2>
+          <p class="authors">Shaya Wolf, Fiona Moss, Rasana Manandhar, <strong>Madison Cooley</strong>, Rafer Cooley, Andrea Burrows, Mike Borowczak</p>
+        </div>
+        <div class="publication-media">
+          <a class="paper-image" href="../images/outreach.webp" aria-label="View figure for Building Collaboration and Securing Interest in Computer Science Education through Outreach Opportunities"><img src="../images/outreach.webp" alt="Title and abstract of the paper on computing outreach camps for K–12 students and teachers" width="658" height="461" loading="lazy"></a>
+          <div class="link-row"><a href="https://doi.org/10.18260/1-2--32484" target="_blank" rel="noopener">Paper</a><a href="../cv/#accessible-cs-workshop">Related workshop</a></div>
+        </div>
+        <div class="publication-content">
+          <div class="publication-tabs" role="tablist" aria-label="Details for this publication" hidden></div>
+          <section class="publication-panel" id="outreach-overview">
+            <h3>Overview</h3>
+            <p class="paper-lead">Hands-on summer camps give students and teachers a way to try computing in schools with limited course offerings.</p>
+            <p>I co-authored our account of the outreach program. Participants practiced coding and computational thinking through hands-on labs, and students finished by demonstrating their projects to friends and family. We also presented a related workshop on accessible computer science education at RMCWIC in 2018.</p>
+          </section>
+          <section class="publication-panel" id="outreach-plain-language">
+            <h3>Plain-language explanation</h3>
+            <p>What happens when students who have limited access to computing classes get a chance to build something with code? We documented camps where students and teachers tried hands-on activities and students showed their projects to family and friends.</p>
+          </section>
+          <section class="publication-panel" id="outreach-skills">
+            <h3>Skills in practice</h3>
+            <ul class="publication-evidence">
+              <li id="outreach-skill-computing-education"><strong>Computing education.</strong> I co-authored the paper documenting the camp activities and student demonstrations.</li>
+            </ul>
+            <ul hidden>
+              <li data-skill>Computing education</li>
+            </ul>
+          </section>
         </div>
       </article>
     </section>
-    <section class="talks" aria-labelledby="talks-title">
-      <h2 class="section-title" id="talks-title">Talks and abstracts</h2>
-      <ul>
-        <li><strong>Predicting the Performance of Mesophase Formation and Properties of Mesophase Pitch</strong> · AIChE Annual Meeting, 2022. I collaborated on models relating pyrolysis conditions and experimental measurements to material properties. <a href="https://aiche.confex.com/aiche/2022/prelim.cgi/Paper/644435">Meeting abstract</a></li>
-        <li><strong>Gene Module Decomposition</strong> · Invited talk, Hasso-Plattner-Institut Algorithm Engineering Seminar. <a href="../resources/acda21_longtalk.pdf">Slides</a></li>
-        <li id="structural-rounding" data-evidence="Implemented C++ graph algorithms for approximate solutions on structured networks."><strong data-work-title>Rounding Out Structural Rounding</strong> · SIAM Workshop on Network Science, 2020. I implemented graph algorithms in C++ to study approximate solutions on structured networks. <a href="https://ns20.cs.cornell.edu/abstracts/SIAMNS_2020_paper_43.pdf">Abstract</a> · <a href="../resources/ns20_talk.pdf">Slides</a>
-          <ul class="work-tags" aria-label="Skills"><li data-skill>Graph algorithms</li><li data-skill>C++</li></ul>
-        </li>
-      </ul>
+    <section class="paper-list selected-talks" id="selected-talks" aria-labelledby="talks-title">
+      <h2 class="section-title" id="talks-title">Selected talks</h2>
+      <article class="paper has-image" id="dissertation-talk">
+        <a class="paper-image" href="../images/dissertation-defense.webp" aria-label="View the dissertation defense photo">
+          <img src="../images/dissertation-defense.webp" alt="Madison Cooley presenting her dissertation beside the projected title slide" width="1542" height="2048" loading="lazy">
+        </a>
+        <div>
+          <p class="eyebrow">Ph.D. dissertation defense · University of Utah · December 2025</p>
+          <h3>Enriched Machine Learning Architectures for Scientific Computing</h3>
+          <p class="paper-lead">How can we build models that capture rapid oscillations and local changes in physical systems?</p>
+          <p>My defense brought together four approaches to that question. Fourier PINNs learn which frequencies matter, PANNs add a polynomial basis, HyResPINNs blend neural and radial basis function components, and HiRefPOU learns where local experts should specialize.</p>
+          <div class="link-row"><a href="../cv/#dissertation-defense">View the full dissertation title and defense listing</a></div>
+        </div>
+      </article>
+      <article class="paper has-image" id="gene-module-talk">
+        <a class="paper-image" href="../images/gene-module-talk.webp" aria-label="View the gene–gene projection slide">
+          <img src="../images/gene-module-talk.webp" alt="Talk slide showing how overlapping modules project onto a weighted network of genes" width="900" height="675" loading="lazy">
+        </a>
+        <div>
+          <p class="eyebrow">SIAM ACDA 2021 · Invited seminar at Hasso-Plattner-Institut · August 2021</p>
+          <h3>Gene Module Decomposition</h3>
+          <p class="paper-lead">How can we recover overlapping groups of genes from the connections we observe between pairs?</p>
+          <p>I co-authored a paper on recovering overlapping groups of genes from weighted connections. For SIAM ACDA, I recorded a longer presentation and gave a five-minute lightning talk. I later gave an invited seminar at Hasso-Plattner-Institut, where I used a step-by-step graph example to explain the decomposition.</p>
+          <div class="link-row"><a href="#gene-modules">Related paper</a><a href="../resources/acda21_talk.pdf">Conference slides (PDF)</a><a href="../resources/acda21_lighttalk.pdf">Lightning talk slides (PDF)</a><a href="../resources/acda21_longtalk.pdf">Invited seminar slides (PDF)</a></div>
+        </div>
+      </article>
+      <article class="paper has-image" id="structural-rounding" data-work="View Structural Rounding">
+        <a class="paper-image" href="../images/structural-rounding-talk.webp" aria-label="View the structural rounding slide">
+          <img src="../images/structural-rounding-talk.webp" alt="Talk slide comparing naive and greedy ways to transfer a vertex cover back to the original graph" width="900" height="675" loading="lazy">
+        </a>
+        <div>
+          <p class="eyebrow">Workshop talk · SIAM Workshop on Network Science · July 2020</p>
+          <h3>Rounding Out Structural Rounding</h3>
+          <p class="paper-lead">Can making a noisy network easier to solve help us find a good answer for the original network?</p>
+          <p>The talk walks through editing a network into a simpler graph, solving the problem there, and transferring the solution back to the original. I implemented C++ graph algorithms to study approximate solutions on structured networks.</p>
+          <ul hidden>
+            <li data-skill data-contribution="Graph algorithms in C++" data-description="I implemented C++ graph algorithms for approximate solutions on structured networks.">C++</li>
+            <li data-skill data-contribution="Graph algorithms in C++" data-description="I implemented C++ graph algorithms for approximate solutions on structured networks.">Graph algorithms</li>
+          </ul>
+          <div class="link-row"><a href="../resources/ns20_talk.pdf">Slides (PDF)</a><a href="https://ns20.cs.cornell.edu/abstracts/SIAMNS_2020_paper_43.pdf" target="_blank" rel="noopener">Abstract</a></div>
+        </div>
+      </article>
+      <div class="link-row"><a href="../cv/#presentations">View all presentations</a></div>
     </section>
   </main>
   <footer class="site-footer wrap">
     <div><strong>Madison Cooley</strong><br>Salt Lake City, Utah</div>
     <div class="link-row">
       <a href="../cv/">CV</a>
-      <a href="https://github.com/madicooley">GitHub</a>
-      <a href="https://www.linkedin.com/in/madison-cooley/">LinkedIn</a>
-      <a href="https://scholar.google.com/citations?user=KTqFjaEAAAAJ&amp;hl=en">Google Scholar</a>
+      <a href="https://github.com/madicooley" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/madison-cooley/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=KTqFjaEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
     </div>
   </footer>
 </body>

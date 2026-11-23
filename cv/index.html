@@ -6,6 +6,7 @@
   <meta name="description" content="Explore Madison Cooley’s research experience, industry internships, education, and technical skills.">
   <title>CV | Madison Cooley</title>
   <link rel="stylesheet" href="../index.css">
+  <script src="../target-highlight.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -27,39 +28,79 @@
   <main class="wrap cv-page" id="main" tabindex="-1">
     <header class="page-intro">
       <h1>Curriculum Vitae</h1>
-      <p class="lead">Madison Cooley, Ph.D. · Scientific machine learning researcher</p>
-      <p class="cv-summary">I develop hybrid machine learning and numerical methods for physical systems. My work spans model design, Python and C++ implementation, and experiments on GPU clusters.</p>
-      <a class="button" href="../resources/Madison-Cooley-CV.pdf" download>Download CV (PDF)</a>
+      <p class="lead"><strong>Madison Cooley, Ph.D.</strong> · Machine learning and scientific computing</p>
     </header>
-    <nav class="cv-sections link-row" aria-label="CV sections">
+    <nav class="section-links link-row" aria-label="CV sections">
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
+      <a href="#teaching">Teaching</a>
       <a href="#skills">Skills</a>
       <a href="#publications">Publications</a>
+      <a href="#presentations">Presentations</a>
+      <a href="#service">Leadership &amp; Service</a>
     </nav>
 
     <section class="cv-section" id="experience" aria-labelledby="experience-title">
       <h2 class="section-title" id="experience-title">Experience</h2>
+      <!-- The hidden skill lists provide evidence for the homepage skill explorer. -->
       <ol class="cv-timeline">
-        <li class="cv-role" id="scientific-ml-experience" data-evidence="Ran baseline comparisons, hyperparameter studies, and ablations on GPU clusters using SLURM.">
+        <li class="cv-role" id="scientific-ml-experience" data-work="View doctoral research experience">
           <p class="eyebrow"><time datetime="2022-05">May 2022</time> – <time datetime="2026-07">July 2026</time></p>
           <div>
-            <h3>Graduate Research Assistant · Scientific ML</h3>
+            <h3>Graduate Research Assistant · Scientific Machine Learning</h3>
             <p class="cv-org">University of Utah · Scientific Computing and Imaging Institute</p>
+            <h4 class="cv-role-subheading">Doctoral research</h4>
             <ul>
-              <li>Led the design, training workflow, and evaluation of HiRefPOU, a neural operator that learns where to place local experts. It lowered prediction error against global DeepONet and fixed-partition baselines on heterogeneous Darcy and reaction–diffusion benchmarks.</li>
-              <li>Designed hybrid physics-informed networks and wrote custom C++ differentiation rules for a fixed Legendre basis. Evaluated accuracy and trainability on Darcy flow, Poisson, and Allen–Cahn problems.</li>
-              <li>Built Python and C++ training and evaluation pipelines, ran baseline comparisons and ablations on GPU clusters with SLURM, and generated Burgers and Kuramoto–Sivashinsky datasets with spectral solvers.</li>
+              <li>Led the design and evaluation of a neural operator that learns where local experts should specialize across a simulation domain. <a href="../research/#hirefpou">View HiRefPOU research</a>.</li>
+              <li>Developed polynomial-augmented neural networks and implemented custom C++ differentiation rules for the fixed Legendre basis. <a href="../research/#panns">View PANNs research</a>.</li>
+              <li>Designed and tested residual blocks that blend neural networks with radial basis functions. <a href="../research/#hyrespinns">View HyResPINNs research</a>.</li>
+              <li>Developed and tested an adaptive Fourier basis to recover high-frequency features in PDE solutions. <a href="../research/#fourier">View Fourier PINNs research</a>.</li>
+              <li>Co-developed and evaluated a Gaussian process solver for high-frequency and multiscale PDEs. <a href="../research/#gaussian-processes">View Gaussian process research</a>.</li>
+              <li id="spectral-simulation-data" data-work="View spectral simulation work">
+                Generated training data with numerical solvers and ran GPU experiments to compare models, test design choices, and measure prediction error.
+                <ul hidden>
+                  <li data-skill data-contribution="Generating PDE solutions with spectral solvers" data-description="I used spectral solvers to generate synthetic Burgers and Kuramoto–Sivashinsky solutions.">Numerical simulation</li>
+                  <li data-skill data-contribution="Generating PDE solutions with spectral solvers" data-description="I used spectral solvers to generate synthetic Burgers and Kuramoto–Sivashinsky solutions.">Spectral methods</li>
+                  <li data-skill data-contribution="Generating PDE solutions with spectral solvers" data-description="I used spectral solvers to generate synthetic Burgers and Kuramoto–Sivashinsky solutions.">Synthetic data generation</li>
+                  <li data-skill data-contribution="Preparing simulated solution fields" data-description="I preprocessed spatial and spatiotemporal simulation outputs for model training and evaluation.">Data cleaning &amp; preprocessing</li>
+                  <li data-skill data-contribution="Preparing simulated solution fields" data-description="I preprocessed spatial and spatiotemporal simulation outputs for model training and evaluation.">Spatiotemporal data processing</li>
+                  <li data-skill data-contribution="Preparing separate training and test sets" data-description="I organized simulated solution fields into datasets and constructed train/test splits for evaluation.">Dataset construction</li>
+                  <li data-skill data-contribution="Preparing separate training and test sets" data-description="I organized simulated solution fields into datasets and constructed train/test splits for evaluation.">Train/validation/test splits</li>
+                </ul>
+              </li>
             </ul>
-            <details>
-              <summary>Semiconductor and materials collaborations</summary>
-              <ul>
-                <li>Ran Synopsys device simulations across material compositions, layer thicknesses, and geometries. Prepared simulation data for planned Bayesian optimization.</li>
-                <li>Worked with chemical engineers to model how pyrolysis conditions and experimental measurements relate to mesophase pitch formation and properties.</li>
-              </ul>
-            </details>
-            <ul class="work-tags" aria-label="Skills"><li data-skill>GPU computing</li><li data-skill>SLURM</li><li data-skill>Model evaluation</li></ul>
-            <div class="link-row"><a href="../research/#hirefpou">HiRefPOU</a><a href="../research/#panns">PANNs</a><a href="../research/#hyrespinns">HyResPINNs</a></div>
+            <h4 class="cv-role-subheading">Engineering collaborations</h4>
+            <ul>
+              <li id="synopsys-simulation" data-work="View semiconductor collaboration">
+                <strong>Semiconductor device simulation.</strong> Used Synopsys to study how changes in device geometry and materials affected electrical behavior.
+                <ul hidden>
+                  <li data-skill data-contribution="Simulating semiconductor device configurations" data-description="I varied device geometry, layer thickness, and material composition in Synopsys.">Numerical simulation</li>
+                  <li data-skill data-contribution="Simulating semiconductor device configurations" data-description="I varied device geometry, layer thickness, and material composition in Synopsys.">Semiconductor device simulation (Synopsys)</li>
+                  <li data-skill data-contribution="Building a semiconductor simulation dataset" data-description="I prepared outputs from the device simulations for planned Bayesian optimization.">Synthetic data generation</li>
+                  <li data-skill data-contribution="Building a semiconductor simulation dataset" data-description="I prepared outputs from the device simulations for planned Bayesian optimization.">Dataset construction</li>
+                </ul>
+              </li>
+              <li id="materials-modeling" data-work="View materials modeling collaboration">
+                <strong>Materials modeling.</strong> Worked with chemical engineers to model relationships between processing conditions, experimental measurements, and material properties. <a href="#mesophase-abstract">View the 2022 abstract listing</a> · <a href="#pyrolysis-abstract">View the 2021 abstract listing</a>.
+                <ul hidden>
+                  <li data-skill data-contribution="Modeling mesophase pitch formation" data-description="I worked with chemical engineers to connect pyrolysis conditions and experimental measurements to pitch formation and material properties.">Predictive modeling</li>
+                  <li data-skill data-contribution="Modeling mesophase pitch formation" data-description="I worked with chemical engineers to connect pyrolysis conditions and experimental measurements to pitch formation and material properties.">Analysis of experimental measurements</li>
+                </ul>
+              </li>
+            </ul>
+            <ul hidden>
+              <li data-skill data-contribution="Training and evaluation pipelines in Python and C++" data-description="I built pipelines to train models and evaluate their predictions across scientific ML experiments.">Python</li>
+              <li data-skill data-contribution="Training and evaluation pipelines in Python and C++" data-description="I built pipelines to train models and evaluate their predictions across scientific ML experiments.">C++</li>
+              <li data-skill data-contribution="Training and evaluation pipelines in Python and C++" data-description="I built pipelines to train models and evaluate their predictions across scientific ML experiments.">Reproducible training &amp; evaluation pipelines</li>
+              <li data-skill data-contribution="Running model experiments on GPU clusters" data-description="I used Slurm to schedule training and evaluation jobs for baseline comparisons, hyperparameter studies, and ablations.">GPU computing</li>
+              <li data-skill data-contribution="Running model experiments on GPU clusters" data-description="I used Slurm to schedule training and evaluation jobs for baseline comparisons, hyperparameter studies, and ablations.">High-performance computing (HPC)</li>
+              <li data-skill data-contribution="Running model experiments on GPU clusters" data-description="I used Slurm to schedule training and evaluation jobs for baseline comparisons, hyperparameter studies, and ablations.">Slurm</li>
+              <li data-skill data-contribution="Running model experiments on GPU clusters" data-description="I used Slurm to schedule training and evaluation jobs for baseline comparisons, hyperparameter studies, and ablations.">Batch job scheduling</li>
+              <li data-skill data-contribution="Planning comparisons with baseline models" data-description="I designed computational experiments and ran baseline comparisons to evaluate new scientific ML methods.">Computational experiment design</li>
+              <li data-skill data-contribution="Planning comparisons with baseline models" data-description="I designed computational experiments and ran baseline comparisons to evaluate new scientific ML methods.">Benchmarking &amp; baseline comparisons</li>
+              <li data-skill data-contribution="Testing the contribution of model components" data-description="I ran ablation studies as part of my doctoral work to assess the effect of design choices.">Ablation studies</li>
+              <li data-skill data-contribution="Evaluating model configurations" data-description="I ran hyperparameter studies on GPU clusters as part of model training and evaluation.">Hyperparameter studies</li>
+            </ul>
           </div>
         </li>
         <li class="cv-role">
@@ -68,33 +109,62 @@
             <h3>Graduate Research Assistant · Graph Algorithms</h3>
             <p class="cv-org">University of Utah · School of Computing</p>
             <ul>
-              <li>Developed graph algorithms for identifying overlapping groups in gene co-expression data and implemented C++ algorithms for structural rounding on noisy networks.</li>
+              <li>Researched fixed-parameter tractable algorithms and structural graph algorithms for biological and network-science applications. <a href="../research/#gene-modules">View the research</a>.</li>
+              <li>Implemented C++ graph algorithms for the Structural Rounding project to find approximate solutions on noisy networks. <a href="#structural-rounding-talk">View the presentation listing</a>.</li>
             </ul>
-            <div class="link-row"><a href="../research/#gene-modules">Gene co-expression paper</a><a href="../resources/ns20_talk.pdf">Structural rounding slides</a></div>
           </div>
         </li>
-        <li class="cv-role">
-          <p class="eyebrow">Spring and fall 2021</p>
-          <div>
-            <h3>Graduate Teaching Assistant</h3>
-            <p class="cv-org">University of Utah · School of Computing</p>
-            <p>Supported undergraduate Algorithms and Data Structures (CS 4150).</p>
-          </div>
-        </li>
-        <li class="cv-role">
+        <li class="cv-role" id="languageio" data-work="View LanguageIO internship">
           <p class="eyebrow"><time datetime="2018-11">November 2018</time> – <time datetime="2019-09">September 2019</time></p>
           <div>
-            <h3>Machine Learning Intern</h3>
-            <p class="cv-org">LanguageIO · Laramie, Wyoming</p>
-            <p>Cleaned and preprocessed noisy user data and implemented machine learning algorithms to predict human translation time.</p>
+            <h3>Machine Learning Intern · LanguageIO</h3>
+            <p class="cv-org">Laramie, Wyoming</p>
+            <p>Built models to predict human translation time and cleaned noisy user data for training.</p>
+            <ul hidden>
+              <li data-skill data-contribution="Predicting human translation time" data-description="I implemented machine learning algorithms to predict translation time from user data.">Predictive modeling</li>
+              <li data-skill data-contribution="Cleaning noisy user data" data-description="I cleaned and preprocessed the user data used to train translation-time prediction models.">Data cleaning &amp; preprocessing</li>
+            </ul>
           </div>
         </li>
-        <li class="cv-role">
+        <li class="cv-role" id="wyoming-ml-research">
+          <p class="eyebrow"><time datetime="2018-05">May 2018</time> – <time datetime="2019-08">August 2019</time></p>
+          <div>
+            <h3>Undergraduate Research Assistant · Machine Learning</h3>
+            <p class="cv-org">University of Wyoming · Machine Learning Group</p>
+            <p>Studied sampling bias in self-labeled Twitter data and developed DeFastText, a bias-corrected model for demographic prediction. Reimplemented FastText in Python to experiment with text representations and language identification. <a href="../research/#self-labeled-data">View the research</a> · <a href="#fasttext-talk">View the presentation listing</a> · <a href="#fasttext-poster">View the award-winning poster listing</a>.</p>
+          </div>
+        </li>
+        <li class="cv-role" id="research-computing" data-work="View research computing internship">
           <p class="eyebrow"><time datetime="2018-03">March 2018</time> – <time datetime="2019-05">May 2019</time></p>
           <div>
             <h3>Research Computing Intern</h3>
             <p class="cv-org">University of Wyoming · Advanced Research Computing Center</p>
-            <p>Helped researchers use HPC clusters, completed training in Linux systems administration and HPC, and created an online HPC training course.</p>
+            <p>Helped researchers run jobs on HPC clusters using Slurm and created an online HPC training course.</p>
+            <ul hidden>
+              <li data-skill data-contribution="Supporting researchers on HPC clusters" data-description="I helped researchers use the University of Wyoming’s clusters and created an online HPC training course.">High-performance computing (HPC)</li>
+              <li data-skill data-contribution="Helping researchers run jobs with Slurm" data-description="I helped researchers submit and run jobs on the University of Wyoming’s HPC clusters.">Slurm</li>
+              <li data-skill data-contribution="Linux systems administration training" data-description="I completed Linux systems administration and HPC training while supporting cluster users.">Linux</li>
+            </ul>
+          </div>
+        </li>
+        <li class="cv-role" id="undergraduate-research">
+          <p class="eyebrow"><time datetime="2018-03">March 2018</time> – <time datetime="2019-03">March 2019</time></p>
+          <div>
+            <h3>Undergraduate Research · Computing Education</h3>
+            <p class="cv-org">University of Wyoming</p>
+            <p>Co-authored an ASEE paper on summer outreach camps that gave K–12 students and teachers hands-on practice with programming and computational thinking. <a href="../research/#outreach">View the research</a> · <a href="#accessible-cs-workshop">View the workshop listing</a>.</p>
+          </div>
+        </li>
+        <li class="cv-role" id="slash2-research" data-work="View SLASH2 research experience">
+          <p class="eyebrow"><time datetime="2017-03">March 2017</time> – <time datetime="2018-03">March 2018</time></p>
+          <div>
+            <h3>Undergraduate Research Assistant · SLASH2</h3>
+            <p class="cv-org">University of Wyoming · Advanced Research Computing Center</p>
+            <p>Configured the University of Wyoming’s servers and wrote Python scripts to benchmark file-transfer speeds for SLASH2, a wide-area filesystem project with the Pittsburgh Supercomputing Center. <a href="#slash2-poster-2018">View the 2018 poster listing</a> · <a href="#slash2-poster-2017">View the 2017 poster listing</a>.</p>
+            <ul hidden>
+              <li data-skill data-contribution="File-transfer benchmarks in Python" data-description="I wrote Python scripts to measure file-transfer speed between servers for the SLASH2 project.">Python</li>
+              <li data-skill data-contribution="Measuring file-transfer performance" data-description="I configured the University of Wyoming’s servers and benchmarked file transfers for the SLASH2 wide-area filesystem.">Computational performance evaluation</li>
+            </ul>
           </div>
         </li>
       </ol>
@@ -107,42 +177,121 @@
           <p class="eyebrow"><time datetime="2026-07">July 2026</time></p>
           <div>
             <h3>Ph.D. in Computing</h3>
-            <p class="cv-org">University of Utah</p>
-            <p>Data Management &amp; Analysis track. Advised by Robert M. Kirby and Varun Shankar.</p>
+            <p class="cv-org">University of Utah · Data Management &amp; Analysis track · Advisors Robert M. Kirby and Varun Shankar</p>
+            <p>Dissertation: <q><a href="#dissertation-defense">Enriched Machine Learning Architectures for Scientific Computing: Fourier PINNs, Polynomial Augmentations, Hybrid Residual Networks, and Operator Learning</a></q></p>
           </div>
         </li>
         <li class="cv-role">
           <p class="eyebrow"><time datetime="2019-05">May 2019</time></p>
           <div>
             <h3>B.S. in Computer Science</h3>
-            <p class="cv-org">University of Wyoming</p>
-            <p>Minors in mathematics and statistics.</p>
+            <p class="cv-org">University of Wyoming · Minors in mathematics and statistics</p>
+            <h4 class="cv-honors-title">Selected honors</h4>
+            <ul>
+              <li>NCWIT Collegiate Award finalist · 2019 · <a href="#ncwit-finalist-presentation">View the presentation listing</a></li>
+              <li>Best Poster Award · Rocky Mountain Celebration of Women in Computing · 2018</li>
+            </ul>
           </div>
         </li>
       </ol>
     </section>
 
+    <section class="cv-section" id="teaching" aria-labelledby="teaching-title">
+      <h2 class="section-title" id="teaching-title">Teaching</h2>
+      <p><strong>Graduate Teaching Assistant · Algorithms and Data Structures (CS 4150)</strong><br>
+        University of Utah · Spring and fall 2021. Held office hours, taught supplementary sessions, and prepared course materials.</p>
+    </section>
+
     <section class="cv-section" id="skills" aria-labelledby="skills-title">
       <h2 class="section-title" id="skills-title">Technical skills</h2>
       <dl class="cv-skills">
-        <div><dt>Scientific machine learning</dt><dd>Physics-informed learning, neural operators, surrogate modeling, localized mixture-of-experts</dd></div>
-        <div><dt>Software and computing</dt><dd>Python, C++, JAX, PyTorch, Linux, SLURM, GPU computing, Synopsys, Git</dd></div>
-        <div><dt>Algorithms and numerical methods</dt><dd>PDE approximation, spectral methods, numerical simulation, automatic differentiation, graph algorithms</dd></div>
+        <div><dt>Languages &amp; tools</dt><dd>Python, JAX, PyTorch, C++, LibTorch, Tensorflow</dd></div>
+        <div><dt>Modeling &amp; methods</dt><dd>PINNs, Surrogate modeling, neural operators, Gaussian processes, numerical simulation</dd></div>
+        <div><dt>Computing &amp; evaluation</dt><dd>GPU clusters, Slurm, benchmarking, ablation studies</dd></div>
       </dl>
+      <p><a href="../#skills">See skills in practice</a></p>
     </section>
 
     <section class="cv-section" id="publications" aria-labelledby="publications-title">
       <h2 class="section-title" id="publications-title">Publications</h2>
-      <p>See the <a href="../research/#publicationdatabase">Research page</a> for papers, figures, and code.</p>
+      <ul class="cv-publications">
+        <li><strong>Madison Cooley</strong>, Ramansh Sharma, Shandian Zhe, Robert M. Kirby, Varun Shankar. “<a href="../research/#hirefpou">Localized Operator Learning with Adaptive Partition-of-Unity Mixture-of-Expert Networks</a>.” <cite>Transactions on Machine Learning Research</cite>, <time datetime="2026">2026</time>.</li>
+        <li><strong>Madison Cooley</strong>, Shandian Zhe, Robert M. Kirby, Varun Shankar. “<a href="../research/#panns">Polynomial-Augmented Neural Networks (PANNs) with Weak Orthogonality Constraints for Enhanced Function and PDE Approximation</a>.” <cite>SIAM Journal on Scientific Computing</cite>, <time datetime="2026">2026</time>.</li>
+        <li><strong>Madison Cooley</strong>, Mike Kirby, Shandian Zhe, Varun Shankar. “<a href="../research/#hyrespinns">HyResPINNs: A Hybrid Residual Physics-Informed Neural Network Architecture Designed to Balance Expressiveness and Trainability</a>.” <cite>Transactions on Machine Learning Research</cite>, <time datetime="2025">2025</time>.</li>
+        <li><strong>Madison Cooley</strong>, Varun Shankar, Robert M. Kirby, Shandian Zhe. “<a href="../research/#fourier">Fourier PINNs: From Strong Boundary Conditions to Adaptive Fourier Bases</a>.” <cite>Transactions on Machine Learning Research</cite>, <time datetime="2025">2025</time>.</li>
+        <li>Shikai Fang<sup>*</sup>, <strong>Madison Cooley</strong><sup>*</sup>, Da Long<sup>*</sup>, Shibo Li, Robert M. Kirby, Shandian Zhe. “<a href="../research/#gaussian-processes">Solving High Frequency and Multi-Scale PDEs with Gaussian Processes</a>.” <cite>Proceedings of the International Conference on Learning Representations (ICLR)</cite>, <time datetime="2024">2024</time>.</li>
+        <li>Zhen Wang, <strong>Madison Cooley</strong>, Yang Zhang, Chao Lan, Ji Zhang. “<a href="../research/#self-labeled-data">Debiased Learning of Self-Labeled Twitter Data for User Demographic Prediction</a>.” <cite>IEEE International Conference on Big Data (Big Data)</cite>, <time datetime="2022">2022</time>.</li>
+        <li><strong>Madison Cooley</strong>, Casey S. Greene, Davis Issac, Milton Pividori, Blair D. Sullivan. “<a href="../research/#gene-modules">Parameterized algorithms for identifying gene co-expression modules via weighted clique decomposition</a>.” <cite>Proceedings of the SIAM Conference on Applied and Computational Discrete Algorithms (ACDA)</cite>, <time datetime="2021">2021</time>.</li>
+        <li>Shaya Wolf, Fiona Moss, Rasana Manandhar, <strong>Madison Cooley</strong>, Rafer Cooley, Andrea Burrows, Mike Borowczak. “<a href="../research/#outreach">Building Collaboration and Securing Interest in Computer Science Education through Outreach Opportunities</a>.” <cite>Proceedings of the ASEE Annual Conference &amp; Exposition</cite>, <time datetime="2019">2019</time>.</li>
+      </ul>
+      <p><small>* Equal contribution.</small></p>
+      <p><a href="../research/#publicationdatabase">View all research</a></p>
+    </section>
+
+    <section class="cv-section" id="presentations" aria-labelledby="presentations-title">
+      <h2 class="section-title" id="presentations-title">Presentations, posters, and abstracts</h2>
+      <ul class="cv-publications">
+        <li id="dissertation-defense"><strong><a href="../research/#dissertation-talk">Enriched Machine Learning Architectures for Scientific Computing: Fourier PINNs, Polynomial Augmentations, Hybrid Residual Networks, and Operator Learning</a></strong> <span>· Ph.D. dissertation defense, University of Utah, <time datetime="2025-12">December 2025</time></span></li>
+        <li><strong>Advances in Physics-Informed Neural Networks</strong> <span>· Poster, Scientific Computing and Imaging Institute 30th Anniversary Open House, <time datetime="2024-04">April 2024</time></span></li>
+        <li id="mesophase-abstract"><strong>Predicting the Performance of Mesophase Formation and Properties of Mesophase Pitch Based on Experimental Investigation and Machine Learning</strong> <span>· Co-authored conference abstract, AIChE Annual Meeting, 2022</span> · <a href="https://studio.m-anage.com/aiche/2022/prelim.cgi/Paper/644435" target="_blank" rel="noopener">Abstract</a></li>
+        <li id="pyrolysis-abstract"><strong>Effect of Pyrolysis Conditions on Producing Mesophase Pitch from Varying Ranks of Coal and Correlating Their Product Properties with Machine Learning Models</strong> <span>· Co-authored conference abstract, AIChE Annual Meeting, 2021</span> · <a href="https://studio.m-anage.com/aiche/2021/meetingapp.cgi/Paper/624940" target="_blank" rel="noopener">Abstract</a></li>
+        <li><strong><a href="../research/#gene-module-talk">Gene Module Decomposition</a></strong> <span>· Invited talk, Hasso-Plattner-Institut Algorithm Engineering Seminar (virtual), August 2021</span></li>
+        <li id="structural-rounding-talk"><strong><a href="../research/#structural-rounding">Rounding Out Structural Rounding</a></strong> <span>· Workshop talk, SIAM Workshop on Network Science (virtual), July 2020</span></li>
+        <li id="ncwit-finalist-presentation"><strong>NCWIT Collegiate Award finalist presentation</strong> <span>· 2019</span> · <a href="https://www.youtube.com/watch?v=E03yS_xJDTY&amp;t=9s" target="_blank" rel="noopener">Watch the recording</a></li>
+        <li id="fasttext-talk"><strong>Learning from Self-Reported Twitter Data by FastText with Cost-Sensitive Sample Selection Bias Correction</strong> <span>· Talk, University of Wyoming Undergraduate Research Day, Laramie, fall 2018</span></li>
+        <li id="accessible-cs-workshop"><strong>Accessible Computer Science Education</strong> <span>· Workshop, ACM Rocky Mountain Celebration of Women in Computing, Denver, fall 2018</span> · <a href="../research/#outreach">Related outreach paper</a></li>
+        <li id="fasttext-poster"><strong>Learning from Self-Reported Twitter Data by FastText with Sample Selection Bias Correction</strong> <span>· Poster, ACM Rocky Mountain Celebration of Women in Computing, Denver, fall 2018</span> · Best Poster Award</li>
+        <li id="slash2-poster-2018"><strong>SLASH2, A Wide Area Filesystem</strong> <span>· Poster, University of Wyoming Undergraduate Research Day, Laramie, spring 2018</span></li>
+        <li id="slash2-poster-2017"><strong>SLASH2, A Wide Area Filesystem</strong> <span>· Poster, Rocky Mountain Advanced Computing Consortium, University of Colorado Boulder, summer 2017</span></li>
+      </ul>
+    </section>
+
+    <section class="cv-section" id="service" aria-labelledby="service-title">
+      <h2 class="section-title" id="service-title">Leadership &amp; Service</h2>
+
+      <h3>Peer review</h3>
+      <ul class="cv-publications">
+        <li>Reviewer, Journal of Machine Learning Research (JMLR) · 2026</li>
+        <li>Reviewer, SIAM Journal on Scientific Computing (SISC) · 2026</li>
+        <li>Reviewer, International Conference on Machine Learning (ICML) · 2025</li>
+        <li>Reviewer, International Conference on Learning Representations (ICLR) · 2025</li>
+      </ul>
+
+      <h3>Leadership and volunteering</h3>
+      <ol class="cv-timeline">
+        <li class="cv-role">
+          <p class="eyebrow"><time datetime="2020-05">May 2020</time> – <time datetime="2022">2022</time></p>
+          <div>
+            <h4>Treasurer</h4>
+            <p class="cv-org"><a href="https://www.cs.utah.edu/graduate/current-students/graduate-student-resources/" target="_blank" rel="noopener">Graduate Student Advisory Committee (GradSAC)</a> · University of Utah</p>
+            <p>Managed finances for the student committee that represents graduate students in the School of Computing and brings their concerns to school leadership.</p>
+          </div>
+        </li>
+        <li class="cv-role">
+          <p class="eyebrow"><time datetime="2018-08">August 2018</time> – <time datetime="2019-05">May 2019</time></p>
+          <div>
+            <h4>Co-founder &amp; Chair</h4>
+            <p class="cv-org">Women in Computing (WiC) · University of Wyoming</p>
+            <p>Co-founded the university’s Women in Computing club. Planned and led its meetings throughout the club’s first academic year.</p>
+          </div>
+        </li>
+        <li class="cv-role">
+          <p class="eyebrow"><time datetime="2019-01">January 2019</time></p>
+          <div>
+            <h4>Student Volunteer</h4>
+            <p class="cv-org">AAAI Conference on Artificial Intelligence</p>
+          </div>
+        </li>
+      </ol>
     </section>
   </main>
   <footer class="site-footer wrap">
     <div><strong>Madison Cooley</strong><br>Salt Lake City, Utah</div>
     <div class="link-row">
       <a href="./" aria-current="page">CV</a>
-      <a href="https://github.com/madicooley">GitHub</a>
-      <a href="https://www.linkedin.com/in/madison-cooley/">LinkedIn</a>
-      <a href="https://scholar.google.com/citations?user=KTqFjaEAAAAJ&amp;hl=en">Google Scholar</a>
+      <a href="https://github.com/madicooley" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/madison-cooley/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=KTqFjaEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
     </div>
   </footer>
 </body>
