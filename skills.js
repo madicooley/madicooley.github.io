@@ -34,10 +34,17 @@ const categories = [
 ];
 
 const skillIndex = document.querySelector('.skill-index');
+const keyBlock = skillIndex.querySelector('#skill-key');
+const keyTitle = skillIndex.querySelector('#skill-key-title');
+const keyButtons = skillIndex.querySelector('#skill-key-buttons');
+const lensMenu = skillIndex.querySelector('#skill-lens-menu');
+const browseBlock = skillIndex.querySelector('#skill-browse');
+const browseTitle = skillIndex.querySelector('#skill-browse-title');
 const categoryButtons = skillIndex.querySelector('#skill-categories');
 const subcategories = skillIndex.querySelector('#skill-subcategories');
 const categoryTitle = skillIndex.querySelector('#skill-category-title');
 const skillButtons = skillIndex.querySelector('#skill-buttons');
+const output = skillIndex.querySelector('.skill-output');
 const skillStatus = skillIndex.querySelector('.skill-status');
 const skillResults = skillIndex.querySelector('.skill-results');
 
@@ -60,7 +67,7 @@ async function loadWork(path) {
 }
 
 function renderResults(skill, matches) {
-  for (const button of skillButtons.querySelectorAll('button')) {
+  for (const button of skillIndex.querySelectorAll('button[data-skill]')) {
     button.setAttribute('aria-pressed', String(button.dataset.skill === skill));
   }
   skillStatus.textContent = '';
@@ -72,7 +79,9 @@ function renderResults(skill, matches) {
   skillResults.replaceChildren(...matches.map((work) => {
     const item = document.createElement('li');
     const link = document.createElement('a');
-    link.href = work.href;
+    const destination = new URL(work.href);
+    destination.searchParams.set('fromSkill', skill);
+    link.href = destination;
     link.textContent = work.linkLabel;
     const contribution = document.createElement('strong');
     contribution.textContent = work.contribution;
@@ -81,6 +90,51 @@ function renderResults(skill, matches) {
     item.append(contribution, description, link);
     return item;
   }));
+}
+
+// A skill toggle with its example count. `place` moves the results under the block it belongs to.
+function makeSkillButton(skill, matches, place) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.dataset.skill = skill;
+  button.textContent = skill;
+  const count = document.createElement('span');
+  count.className = 'skill-count';
+  count.textContent = matches.length;
+  count.setAttribute('aria-label', `${matches.length} ${matches.length === 1 ? 'example' : 'examples'}`);
+  button.append(count);
+  button.setAttribute('aria-pressed', 'false');
+  button.setAttribute('aria-controls', 'skill-results');
+  button.addEventListener('click', () => {
+    if (button.getAttribute('aria-pressed') === 'true') {
+      renderResults(null, []);
+    } else {
+      place();
+      renderResults(skill, matches);
+    }
+  });
+  return button;
+}
+
+function collapseCategories() {
+  for (const button of categoryButtons.querySelectorAll('button')) button.setAttribute('aria-expanded', 'false');
+  skillButtons.replaceChildren();
+  subcategories.hidden = true;
+}
+
+const showKeyResults = () => { collapseCategories(); keyBlock.append(output); };
+const showBrowseResults = () => browseBlock.append(output);
+
+function openCategory(button, category, skills, examples) {
+  collapseCategories();
+  button.setAttribute('aria-expanded', 'true');
+  subcategories.hidden = false;
+  categoryTitle.textContent = category;
+  // Only list skills that link to at least one example.
+  const available = skills.filter((name) => examples.has(name));
+  skillButtons.replaceChildren(...available.map((skill) => makeSkillButton(skill, examples.get(skill), showBrowseResults)));
+  showBrowseResults();
+  renderResults(available[0] ?? null, available.length ? examples.get(available[0]) : []);
 }
 
 async function showSkillIndex() {
@@ -97,6 +151,22 @@ async function showSkillIndex() {
     }
   }
 
+  buildCategories(examples, new URLSearchParams(window.location.search).get('skill'));
+  document.addEventListener('lenschange', () => buildCategories(examples, null));
+}
+
+function buildCategories(examples, requestedSkill) {
+  // With a lens active, its key skills get their own block above the category browser.
+  const lens = window.siteLens?.current;
+  const keySkills = lens ? lens.skills.filter((skill) => examples.has(skill)) : [];
+  keyBlock.hidden = !keySkills.length;
+  browseTitle.hidden = !keySkills.length;
+  keyTitle.textContent = lens ? `Key skills for ${lens.label}` : '';
+  keyButtons.replaceChildren(...keySkills.map((skill) => makeSkillButton(skill, examples.get(skill), showKeyResults)));
+
+  categoryButtons.replaceChildren();
+  collapseCategories();
+  let restoredButton;
   for (const [category, skills] of categories) {
     const button = document.createElement('button');
     button.type = 'button';
@@ -104,47 +174,35 @@ async function showSkillIndex() {
     button.setAttribute('aria-controls', 'skill-subcategories');
     button.setAttribute('aria-expanded', 'false');
     button.addEventListener('click', () => {
-      const opening = button.getAttribute('aria-expanded') === 'false';
-      for (const categoryButton of categoryButtons.querySelectorAll('button')) {
-        categoryButton.setAttribute('aria-expanded', String(opening && categoryButton === button));
+      if (button.getAttribute('aria-expanded') === 'true') {
+        collapseCategories();
+        renderResults(null, []);
+      } else {
+        openCategory(button, category, skills, examples);
       }
-      renderResults(null, []);
-      skillButtons.replaceChildren();
-      subcategories.hidden = !opening;
-      if (!opening) return;
-
-      categoryTitle.textContent = category;
-      // Only list skills that link to at least one example.
-      for (const skill of skills.filter((name) => examples.has(name))) {
-        const matches = examples.get(skill);
-        const skillButton = document.createElement('button');
-        skillButton.type = 'button';
-        skillButton.dataset.skill = skill;
-        skillButton.textContent = skill;
-        const count = document.createElement('span');
-        count.className = 'skill-count';
-        count.textContent = matches.length;
-        count.setAttribute('aria-label', `${matches.length} ${matches.length === 1 ? 'example' : 'examples'}`);
-        skillButton.append(count);
-        skillButton.setAttribute('aria-pressed', 'false');
-        skillButton.setAttribute('aria-controls', 'skill-results');
-        skillButton.addEventListener('click', () => {
-          if (skillButton.getAttribute('aria-pressed') === 'true') {
-            renderResults(null, []);
-          } else {
-            renderResults(skill, matches);
-          }
-        });
-        skillButtons.append(skillButton);
-      }
-      const firstSkill = skills.find((skill) => examples.has(skill));
-      if (firstSkill) renderResults(firstSkill, examples.get(firstSkill));
     });
+    if (!restoredButton && skills.includes(requestedSkill)) restoredButton = button;
     categoryButtons.append(button);
   }
   skillIndex.hidden = false;
-  // Start with the first category open so visitors see examples right away.
-  categoryButtons.querySelector('button')?.click();
+
+  const restoring = examples.has(requestedSkill);
+  if (restoring && keySkills.includes(requestedSkill)) {
+    showKeyResults();
+    renderResults(requestedSkill, examples.get(requestedSkill));
+  } else if (restoring && restoredButton) {
+    restoredButton.click();
+    renderResults(requestedSkill, examples.get(requestedSkill));
+  } else if (keySkills.length) {
+    showKeyResults();
+    renderResults(keySkills[0], examples.get(keySkills[0]));
+  } else {
+    categoryButtons.querySelector('button')?.click();
+  }
+  if (restoring && window.location.hash === '#skills') document.getElementById('skills').scrollIntoView();
 }
+
+// "change view" opens a small menu of lenses right here, instead of sending visitors back up the page.
+window.siteLens?.attachMenu(lensMenu);
 
 showSkillIndex();

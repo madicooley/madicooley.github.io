@@ -6,7 +6,8 @@
   <meta name="description" content="Madison Cooley, Ph.D., builds physics-informed neural networks, neural operators, and surrogate models for science and engineering. Explore her research, skills, and CV.">
   <title>Madison Cooley</title>
   <link rel="stylesheet" href="./index.css">
-  <script src="skills.js?v=3" defer></script>
+  <script src="lenses.js?v=4" defer></script>
+  <script src="skills.js?v=8" defer></script>
   <link rel="icon" type="image/png" href="./images/brand-mark.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Madison Cooley · Machine Learning Scientist">
@@ -24,6 +25,7 @@
       <nav aria-label="Main navigation">
         <a href="./" aria-current="page">Home</a>
         <a href="./research/">Research</a>
+        <a href="./projects/">Projects</a>
       </nav>
       <div class="header-links"><a href="./cv/">CV</a>
         <details class="email-disclosure">
@@ -38,88 +40,113 @@
       <div class="intro-copy">
         <p class="eyebrow">Machine Learning Scientist · Ph.D. · Salt Lake City, UT</p>
         <h1>Madison Cooley</h1>
-        <p class="lead">I build and evaluate machine learning models for physical systems, including physics-informed neural networks, neural operators, and surrogate models for simulation-heavy engineering problems.</p>
-        <p>During my Ph.D. in Computing at the University of Utah, I designed new model architectures, generated simulation datasets, and ran benchmark, ablation, and hyperparameter studies on GPU clusters. I also worked with chemical engineers on machine learning for materials processing and simulated semiconductor devices in Synopsys. I care most about choosing the right model for a problem and testing whether it really works.</p>
+        <p class="lead">I design physics-informed neural networks, neural operators, and surrogate models for simulation-heavy engineering problems. 
+          4+ years building scientific ML models in PyTorch, JAX, and C++ on GPU clusters, plus ML for materials processing and semiconductor device simulation. </p>
         <ul class="quick-facts" aria-label="At a glance">
           <li>Ph.D. in Computing, University of Utah, 2026</li>
           <li>5 papers in SIAM J. Sci. Comput., TMLR, and ICLR</li>
-          <li>Python · PyTorch · JAX · C++ · GPU clusters · Slurm · Linux</li>
         </ul>
-        <p><em>I’m based in Salt Lake City and looking for industry roles in machine learning research, applied science, and data science.</em></p>
+        <p><em>I’m based in Salt Lake City and looking for industry roles in machine learning research, applied science, and data science.
+          Open to on-site roles in the Salt Lake City area or remote positions. 
+        </em></p>
+      </div>
+      <div class="intro-aside">
+        <img class="portrait" src="images/mcooley2.jpg" alt="Madison Cooley" width="1017" height="1442">
         <div class="link-row intro-links">
-          <a class="button" href="cv/">View CV</a>
           <a href="https://github.com/madicooley" target="_blank" rel="noopener">GitHub</a>
           <a href="https://www.linkedin.com/in/madison-cooley/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://scholar.google.com/citations?user=KTqFjaEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
         </div>
       </div>
-      <img class="portrait" src="images/mcooley2.jpg" alt="Madison Cooley" width="1017" height="1442">
     </section>
+
+    <div class="lens-bar" id="lens-bar" hidden></div>
 
     <section class="feature" aria-labelledby="feature-title">
       <div class="feature-copy">
         <p class="eyebrow">Featured research · TMLR 2026</p>
         <h2 id="feature-title">Learning where to specialize</h2>
-        <p>How does a chemical concentration evolve when reactions occur on only one side of a domain? I led the development of a neural operator that learns where local experts should specialize and how to blend their predictions.</p>
+        <p>I led the development of a neural operator that learns where local experts should specialize and how to blend their predictions.</p>
         <p class="why-it-matters"><strong>Why it matters.</strong> Many engineered systems, from layered materials to reacting flows, behave differently from one region to the next. In our heterogeneous Darcy flow and reaction–diffusion benchmarks, learning where to specialize reduced prediction error compared with a single global DeepONet.</p>
-        <figure class="initial-field">
-          <div class="field-map"><img src="images/hirefpou-initial.png" alt="Uniform initial concentration across the domain" width="208" height="208"></div>
-          <figcaption><strong>Initial concentration.</strong> The field starts uniform. Reactions are active on the left and switch off on the right.</figcaption>
+      </div>
+      <div class="feature-visual">
+        <figure class="partition-figure">
+          <h3>Where each expert has the most influence</h3>
+          <div class="field-comparison">
+            <div class="comparison-panel">
+              <div class="field-map has-interface"><img src="images/hirefpou-final.png" alt="Final reference concentration with a strong spatial pattern on the left and lower concentration on the right" width="209" height="208"></div>
+              <span>Final concentration (reference)</span>
+              <div class="field-scale concentration-scale" aria-label="Final concentration scale, from low to high">
+                <span>Low</span><span class="scale-bar" aria-hidden="true"></span><span>High</span>
+              </div>
+            </div>
+            <div class="comparison-panel">
+              <div class="field-map has-interface"><img src="images/hirefpou-leading-experts.png" alt="Leading expert map with five colored regions, four on the left and one dominant across the right" width="219" height="191"></div>
+              <span>Leading expert (argmax)</span>
+              <ul class="expert-key" aria-label="Leading expert color key">
+                <li><span class="expert-swatch swatch-2" aria-hidden="true"></span>2</li>
+                <li><span class="expert-swatch swatch-3" aria-hidden="true"></span>3</li>
+                <li><span class="expert-swatch swatch-4" aria-hidden="true"></span>4</li>
+                <li><span class="expert-swatch swatch-5" aria-hidden="true"></span>5</li>
+                <li><span class="expert-swatch swatch-6" aria-hidden="true"></span>6</li>
+              </ul>
+            </div>
+          </div>
         </figure>
         <div class="link-row feature-links">
           <a class="button" href="research/#hirefpou">Explore HiRefPOU</a>
           <a href="https://openreview.net/forum?id=ccEY1fZ5gA" target="_blank" rel="noopener">Read the paper</a>
         </div>
       </div>
-      <figure class="partition-figure">
-        <h3>Where each expert has the most influence</h3>
-        <div class="field-comparison">
-          <div class="comparison-panel">
-            <div class="field-map has-interface"><img src="images/hirefpou-final.png" alt="Final reference concentration with a strong spatial pattern on the left and lower concentration on the right" width="209" height="208"></div>
-            <span>Final concentration (reference)</span>
-            <div class="field-scale concentration-scale" aria-label="Final concentration scale, from low to high">
-              <span>Low</span><span class="scale-bar" aria-hidden="true"></span><span>High</span>
-            </div>
+      <details class="map-guide">
+        <summary>How to read these maps</summary>
+        <p class="map-question">How does a chemical concentration evolve when reactions occur on only one side of a domain?</p>
+        <figure class="initial-field">
+          <div class="field-map"><img src="images/hirefpou-initial.png" alt="Uniform initial concentration across the domain" width="208" height="208"></div>
+          <figcaption><strong>Initial concentration.</strong> The field starts uniform. Reactions are active on the left and switch off on the right.</figcaption>
+        </figure>
+        <p class="map-caption">Each color in the argmax map shows which expert has the highest weight at that location. Several experts specialize in different parts of the reacting left half, while one leads across much of the right. Expert 1 never has the highest weight in this example, but it still contributes wherever its weight is nonzero, helping blend the experts’ predictions into one solution. The dashed line marks the <em>reaction interface</em> at <i>x</i> = 1. The model learns the partitions from data without being told where that interface is.</p>
+        <details class="individual-experts">
+          <summary>View individual expert weights</summary>
+          <div class="partition-grid">
+            <div><div class="field-map has-interface"><img src="images/hirefpou-expert-1.png" width="126" height="137" alt="Weights are strongest near the upper left and fade toward the right"></div><span>Expert 1</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.03 to 0.18"><span aria-hidden="true">0.03</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.18</span></div></div>
+            <div><div class="field-map has-interface"><img src="images/hirefpou-expert-2.png" width="125" height="137" alt="Weights are concentrated near the bottom-left corner"></div><span>Expert 2</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.01 to 0.78"><span aria-hidden="true">0.01</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.78</span></div></div>
+            <div><div class="field-map has-interface"><img src="images/hirefpou-expert-3.png" width="125" height="137" alt="Weights are strongest along the left edge"></div><span>Expert 3</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.02 to 0.42"><span aria-hidden="true">0.02</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.42</span></div></div>
+            <div><div class="field-map has-interface"><img src="images/hirefpou-expert-4.png" width="126" height="137" alt="Weights peak near the lower left and taper away from it"></div><span>Expert 4</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.02 to 0.26"><span aria-hidden="true">0.02</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.26</span></div></div>
+            <div><div class="field-map has-interface"><img src="images/hirefpou-expert-5.png" width="126" height="137" alt="Weights peak toward the upper left and fade toward the lower right"></div><span>Expert 5</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.02 to 0.30"><span aria-hidden="true">0.02</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.30</span></div></div>
+            <div><div class="field-map has-interface"><img src="images/hirefpou-expert-6.png" width="126" height="137" alt="Weights are strongest across the right side of the domain"></div><span>Expert 6</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.02 to 0.84"><span aria-hidden="true">0.02</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.84</span></div></div>
           </div>
-          <div class="comparison-panel">
-            <div class="field-map has-interface"><img src="images/hirefpou-leading-experts.png" alt="Leading expert map with five colored regions, four on the left and one dominant across the right" width="219" height="191"></div>
-            <span>Leading expert (argmax)</span>
-            <ul class="expert-key" aria-label="Leading expert color key">
-              <li><span class="expert-swatch swatch-2" aria-hidden="true"></span>2</li>
-              <li><span class="expert-swatch swatch-3" aria-hidden="true"></span>3</li>
-              <li><span class="expert-swatch swatch-4" aria-hidden="true"></span>4</li>
-              <li><span class="expert-swatch swatch-5" aria-hidden="true"></span>5</li>
-              <li><span class="expert-swatch swatch-6" aria-hidden="true"></span>6</li>
-            </ul>
-          </div>
-        </div>
-        <figcaption>Each color in the argmax map shows which expert has the highest weight at that location. Several experts specialize in different parts of the reacting left half, while one leads across much of the right. Expert 1 never has the highest weight in this example, but it still contributes wherever its weight is nonzero, helping blend the experts’ predictions into one solution. The dashed line marks the <em>reaction interface</em> at <i>x</i> = 1. The model learns the partitions from data without being told where that interface is.</figcaption>
-      </figure>
-      <details class="individual-experts">
-        <summary>View individual expert weights</summary>
-        <div class="partition-grid">
-          <div><div class="field-map has-interface"><img src="images/hirefpou-expert-1.png" width="126" height="137" alt="Weights are strongest near the upper left and fade toward the right"></div><span>Expert 1</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.03 to 0.18"><span aria-hidden="true">0.03</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.18</span></div></div>
-          <div><div class="field-map has-interface"><img src="images/hirefpou-expert-2.png" width="125" height="137" alt="Weights are concentrated near the bottom-left corner"></div><span>Expert 2</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.01 to 0.78"><span aria-hidden="true">0.01</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.78</span></div></div>
-          <div><div class="field-map has-interface"><img src="images/hirefpou-expert-3.png" width="125" height="137" alt="Weights are strongest along the left edge"></div><span>Expert 3</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.02 to 0.42"><span aria-hidden="true">0.02</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.42</span></div></div>
-          <div><div class="field-map has-interface"><img src="images/hirefpou-expert-4.png" width="126" height="137" alt="Weights peak near the lower left and taper away from it"></div><span>Expert 4</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.02 to 0.26"><span aria-hidden="true">0.02</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.26</span></div></div>
-          <div><div class="field-map has-interface"><img src="images/hirefpou-expert-5.png" width="126" height="137" alt="Weights peak toward the upper left and fade toward the lower right"></div><span>Expert 5</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.02 to 0.30"><span aria-hidden="true">0.02</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.30</span></div></div>
-          <div><div class="field-map has-interface"><img src="images/hirefpou-expert-6.png" width="126" height="137" alt="Weights are strongest across the right side of the domain"></div><span>Expert 6</span><div class="expert-scale" role="img" aria-label="Approximate weight range 0.02 to 0.84"><span aria-hidden="true">0.02</span><span class="scale-bar" aria-hidden="true"></span><span aria-hidden="true">0.84</span></div></div>
-        </div>
-        <p>Each map has its own weight scale. Warmer colors indicate higher weight within that map, and the endpoints are approximate. <a href="images/learned-partitions.jpg">View the original Figure 9 maps</a>.</p>
+          <p>Each map has its own weight scale. Warmer colors indicate higher weight within that map, and the endpoints are approximate. <a href="images/learned-partitions.jpg">View the original Figure 9 maps</a>.</p>
+        </details>
       </details>
     </section>
 
     <section class="skills-section" id="skills" aria-labelledby="skills-title">
       <h2 class="section-title" id="skills-title">Skills in practice</h2>
+      <p class="skill-instruction">Choose a skill to see the projects where I used it. Numbers show how many examples each skill links to.</p>
       <div class="skill-index" hidden>
-        <p class="skill-instruction">Choose a category, then a skill, to see the projects where I used it. Numbers show how many examples each skill links to.</p>
-        <div class="tag-filter skill-filter" id="skill-categories" role="group" aria-label="Skill categories"></div>
-        <div class="skill-subcategories" id="skill-subcategories" hidden>
-          <h4 id="skill-category-title"></h4>
-          <div class="tag-filter" id="skill-buttons" role="group" aria-labelledby="skill-category-title"></div>
+        <div class="skill-block skill-key" id="skill-key" hidden>
+          <div class="skill-key-header">
+            <h3 class="skill-block-title" id="skill-key-title"></h3>
+            <details class="lens-menu" id="skill-lens-menu">
+              <summary>change view</summary>
+              <div class="lens-menu-panel" role="group" aria-label="Choose a view"></div>
+            </details>
+          </div>
+          <div class="tag-filter" id="skill-key-buttons" role="group" aria-labelledby="skill-key-title"></div>
         </div>
-        <p class="skill-status" role="status"></p>
-        <ul class="skill-results" id="skill-results"></ul>
+        <div class="skill-block skill-browse" id="skill-browse">
+          <h3 class="skill-block-title" id="skill-browse-title" hidden>Browse all skills by category</h3>
+          <div class="tag-filter skill-filter" id="skill-categories" role="group" aria-label="Skill categories"></div>
+          <div class="skill-subcategories" id="skill-subcategories" hidden>
+            <h4 id="skill-category-title"></h4>
+            <div class="tag-filter" id="skill-buttons" role="group" aria-labelledby="skill-category-title"></div>
+          </div>
+        </div>
+        <div class="skill-output">
+          <p class="skill-status" role="status"></p>
+          <ul class="skill-results" id="skill-results"></ul>
+        </div>
       </div>
     </section>
 
